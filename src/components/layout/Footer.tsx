@@ -13,11 +13,6 @@ export function Footer() {
         </p>
         <div className="flex flex-wrap items-center gap-3 text-neutral-400 dark:text-neutral-600">
           <span className="inline-flex items-center">
-            <Code2 className="mr-1.5 h-[14px] w-[14px]" />
-            Full Stack Development · AI Integration
-          </span>
-          <span className="hidden sm:inline h-3 w-px bg-neutral-800 dark:bg-neutral-300 transition-colors duration-500" />
-          <span className="inline-flex items-center">
             <MapPin className="mr-1.5 h-[14px] w-[14px]" />
             Israel · Open to remote
           </span>
