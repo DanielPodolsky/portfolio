@@ -14,7 +14,11 @@ import ShinyText from "@/components/ui/ShinyText"
 import profilePic from "@/assets/images/ProfilePicture.jpg"
 import SpotlightCard from "@/components/ui/SpotlightCard"
 
-export function Hero() {
+interface HeroProps {
+  onResumeClick: () => void
+}
+
+export function Hero({ onResumeClick }: HeroProps) {
   return (
     <section
       id="about"
@@ -76,14 +80,14 @@ export function Hero() {
           </a>
 
           {/* Resume Button */}
-          <a
-            href="#resume"
+          <button
+            onClick={onResumeClick}
             className="inline-flex items-center rounded-full border border-neutral-700/80 dark:border-neutral-300/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-200 dark:text-neutral-700 
   transition-all hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-white dark:hover:text-neutral-900 hover:-translate-y-[1px]"
           >
             <FileText className="mr-1.5 h-[15px] w-[15px]" />
             Resume
-          </a>
+          </button>
 
           {/* GitHub Button */}
           <a
