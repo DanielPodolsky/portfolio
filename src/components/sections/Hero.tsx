@@ -8,6 +8,8 @@ import {
   Github,
   Award,
   Trophy,
+  Brain,
+  Zap,
   Linkedin,
 } from "lucide-react"
 import ShinyText from "@/components/ui/ShinyText"
@@ -48,14 +50,15 @@ function Hero({ onResumeClick }: HeroProps) {
             I became a Full Stack Developer during my CS degree, and when I
             started working with AI, it unlocked something new. Now I build
             systems that combine thoughtful architecture with the power of LLMs
-            - not chasing trends, but solving problems that weren't possible a
+            - not chasing trends, but creating solutions that weren't possible a
             few years ago.
           </p>
           <p>
             Before tech, I was a Combat Medic and Drone Operator in the Israeli
-            Defense Force. I graduated with an 89 GPA from Holon Institute of
-            Technology, but more importantly, I learned that good architecture
-            comes before good code - I map out the system before writing code.
+            Defense Force. I graduated with a 89 GPA from Holon Institute of
+            Technology (H.I.T.), but more importantly, I learned that good
+            architecture comes before good code - I map out the system before
+            writing code.
           </p>
           <p>
             My team from H.I.T. won 2nd place at the AWS Public Sector
@@ -64,6 +67,11 @@ function Hero({ onResumeClick }: HeroProps) {
             and later my LLM-Powered Log Analyzer project, taught me the same
             lesson: language models do incredible things when you architect the
             system correctly.
+          </p>
+          <p>
+            Now I'm building at that intersection - combining solid engineering
+            fundamentals with the capabilities of modern AI. I want to create
+            tools people will actually use.
           </p>
         </div>
 
@@ -213,7 +221,7 @@ function Hero({ onResumeClick }: HeroProps) {
                   1st Place · H.I.T. Hackathon
                 </p>
                 <p className="mt-0.5 text-[10px] leading-tight text-neutral-500 dark:text-neutral-600">
-                  Team project
+                  Institutional Hackathon
                 </p>
               </div>
             </div>
@@ -236,10 +244,34 @@ function Hero({ onResumeClick }: HeroProps) {
               <Code2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
               <div className="flex-1">
                 <p className="text-[11px] font-medium leading-tight text-neutral-200 dark:text-neutral-900">
-                  Exify Contributor
+                  Exify Code Contributor
                 </p>
                 <p className="mt-0.5 text-[10px] leading-tight text-neutral-500 dark:text-neutral-600">
                   1000+ active users
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <Brain className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-purple-400" />
+              <div className="flex-1">
+                <p className="text-[11px] font-medium leading-tight text-neutral-200 dark:text-neutral-900">
+                  AI Enthusiast
+                </p>
+                <p className="mt-0.5 text-[10px] leading-tight text-neutral-500 dark:text-neutral-600">
+                  Thinking...
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <Zap className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-orange-400" />
+              <div className="flex-1">
+                <p className="text-[11px] font-medium leading-tight text-neutral-200 dark:text-neutral-900">
+                  Basketball Player
+                </p>
+                <p className="mt-0.5 text-[10px] leading-tight text-neutral-500 dark:text-neutral-600">
+                  On and off the court thinking about my next move
                 </p>
               </div>
             </div>
