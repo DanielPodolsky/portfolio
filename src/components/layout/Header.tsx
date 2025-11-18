@@ -45,16 +45,16 @@ export function Header() {
             Projects
           </a>
           <a
+            href="#blogs"
+            className="transition-colors hover:text-white dark:hover:text-neutral-900"
+          >
+            Blogs
+          </a>
+          <a
             href="#skills"
             className="transition-colors hover:text-white dark:hover:text-neutral-900"
           >
             Skills
-          </a>
-          <a
-            href="#achievements"
-            className="transition-colors hover:text-white dark:hover:text-neutral-900"
-          >
-            Achievements
           </a>
         </nav>
 
