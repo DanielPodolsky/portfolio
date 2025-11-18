@@ -1,16 +1,32 @@
 .shiny-text {
-  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
+  /* Dark mode: Light gray text with white shine */
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 60%
+    rgba(181, 181, 181, 0.64) 40%,
+    /* Light gray base */ rgba(255, 255, 255, 1) 50%,
+    /* Bright white shine */ rgba(181, 181, 181, 0.64) 60% /* Light gray base */
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: inline-block;
   animation: shine 5s linear infinite;
+  overflow: visible;
+}
+
+/* Light mode: Black text with white glare */
+html.dark .shiny-text {
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 65%
+  );
+  background-size: 200% 100%; /* Must re-declare */
+  -webkit-background-clip: text; /* Must re-declare */
+  background-clip: text; /* Must re-declare */
+  -webkit-text-fill-color: transparent; /* Must re-declare */
 }
 
 @keyframes shine {
