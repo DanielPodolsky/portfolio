@@ -11,6 +11,7 @@ interface BounceCardsProps {
   easeType?: string
   transformStyles?: string[]
   enableHover?: boolean
+  cardSize?: number
 }
 
 export default function BounceCards({
@@ -29,6 +30,7 @@ export default function BounceCards({
     "rotate(2deg) translate(170px)",
   ],
   enableHover = false,
+  cardSize = 200,
 }: BounceCardsProps) {
   useEffect(() => {
     gsap.fromTo(
@@ -134,8 +136,10 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute w-[200px] aspect-square border-8 border-white rounded-[30px] overflow-hidden`}
+          className={`card card-${idx} absolute border-8 border-white rounded-[30px] overflow-hidden`}
           style={{
+            width: cardSize,
+            height: cardSize,
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
             transform: transformStyles[idx] || "none",
           }}

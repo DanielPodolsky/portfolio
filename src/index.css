@@ -121,6 +121,10 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Offset for fixed header */
   }
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 @keyframes marquee {
