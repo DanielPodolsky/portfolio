@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined) // I
 // 3. Create the provider component (this wraps our app)
 export function ThemeProvider({ children }: { children: ReactNode }) {
   // Track current theme with state
-  const [theme, setTheme] = useState<"dark" | "light">("dark")
+  const [theme, setTheme] = useState<"dark" | "light">("light")
 
   useEffect(() => {
     // Check localStorage first
