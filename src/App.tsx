@@ -4,6 +4,8 @@ import { Footer } from "@/components/layout/Footer"
 import { Hero } from "@/components/sections/Hero"
 import { Projects } from "@/components/sections/Projects"
 import { Blog } from "@/components/sections/Blog"
+import { Skills } from "@/components/sections/Skills"
+import { Contact } from "@/components/sections/Contact"
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Hero />
       <Projects />
       <Blog />
+      <Skills />
+      <Contact />
       <Footer />
     </Layout>
   )
