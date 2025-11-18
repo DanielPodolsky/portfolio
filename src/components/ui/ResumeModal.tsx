@@ -7,7 +7,7 @@ interface ResumeModalProps {
   pdfUrl: string
 }
 
-export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
+function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
   // Close on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -87,3 +87,5 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
     </div>
   )
 }
+
+export default ResumeModal
