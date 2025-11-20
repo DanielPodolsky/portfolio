@@ -1,108 +1,98 @@
-# Daniel Podolsky - Portfolio
+# Daniel Podolsky Portfolio
 
-> A modern, performant portfolio website showcasing my journey from Combat Medic to Software Engineer, built with cutting-edge web technologies.
+A performant portfolio website built with React 19 and TypeScript, featuring premium UI interactions and theme-aware design.
 
-[Live Demo](#) <!-- We'll add deployment link later -->
+**Live Demo**: [danielpodolsky.dev](https://danielpodolsky.dev)
+**Repository**: [github.com/DanielPodolsky/portfolio](https://github.com/DanielPodolsky/portfolio)
 
-## 🚀 About
+### Built With
 
-Professional portfolio website highlighting my technical projects, skills, and experience. Built with a focus on performance, accessibility, and modern development practices.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?logo=tailwindcss&logoColor=white)
 
-## ✨ Features
+## Overview
 
-- ⚡ Lightning-fast performance with Vite
-- 🎨 Modern UI with Tailwind CSS v4
-- 🌗 Dark/Light mode support
-- ♿ Fully accessible (WCAG 2.1 AA)
-- 📱 Responsive design
-- 🎭 Smooth animations with Framer Motion
-- 📊 Performance optimized (Lighthouse 100)
+This portfolio showcases my transition from Combat Medic to Software Engineer through interactive project cards, technical blog posts, and a skills showcase. The site prioritizes performance, accessibility, and modern development patterns that reflect production-grade engineering practices.
 
-## 🛠️ Tech Stack
-
-### Core
-- **React** 19.2.0 - Latest React with modern patterns
-- **TypeScript** 5.9 - Strict mode enabled
-- **Vite** 7.2.2 - Next-generation build tool
-
-### Styling
-- **Tailwind CSS** 4.1.17 - Utility-first CSS framework (v4 beta)
-- **shadcn/ui** - Customizable component library
-- **Lucide Icons** - Beautiful icon system
-
-### Code Quality
-- **ESLint** 9 - Latest flat config
-- **Prettier** - Code formatting
-- **TypeScript Strict Mode** - Maximum type safety
-
-## 📁 Project Structure
-
-src/
-├── components/
-│   ├── ui/          # shadcn/ui components
-│   ├── layout/      # Layout components (Header, Footer)
-│   └── sections/    # Page sections (Hero, About, Projects)
-├── hooks/           # Custom React hooks
-├── lib/             # Utility functions
-├── types/           # TypeScript type definitions
-└── assets/          # Static assets
-
-## 🚦 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or pnpm
+- Node.js 18 or higher
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/DanielPodolsky/portfolio-site.git
+git clone https://github.com/DanielPodolsky/portfolio.git
+cd portfolio
 
-# Navigate to project
-cd portfolio-site
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
+```
 
-### Available Scripts
+The development server starts at `http://localhost:5173`.
 
-npm run dev          # Start dev server (http://localhost:5173)
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-npm run format       # Format with Prettier
-npm run format:check # Check formatting
+### Environment Variables
 
-### 🏗️ Development Phases
+Create a `.env` file in the project root:
 
-[x]- Phase 0: Project setup and architecture
-[] - Phase 1: Core layout and navigation
-[] - Phase 2: Hero and About sections
-[] - Phase 3: Projects showcase
-[] - Phase 4: Skills and experience
-[] - Phase 5: Contact form
-[] - Phase 6: Performance optimization
-[] - Phase 7: Testing and quality
-[] - Phase 8: Deployment and CI/CD
-[] - Phase 9: Polish and launch
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-### 📝 License
+## Project Structure
 
-This project is open source and available under the LICENSE.
+```
+src/
+├── assets/              # Static images and blog assets
+├── components/
+│   ├── layout/          # Layout primitives (Header, Footer, Layout)
+│   ├── sections/        # Page sections (Hero, Projects, Blog, Skills, Contact)
+│   └── ui/              # Reusable UI components (ProjectCard, BlogCard, SpotlightCard)
+├── contexts/            # React Context providers (ThemeContext)
+├── data/                # Static data (projects, skills, blog posts)
+├── hooks/               # Custom React hooks (planned)
+├── lib/                 # Utility functions (cn helper)
+└── types/               # TypeScript type definitions
+```
 
-### 🤝 Connect
+## Available Scripts
 
-- Portfolio: [Coming Soon]
-- LinkedIn: https://www.linkedin.com/in/daniel-podolsky-341901242/
-- GitHub: https://github.com/DanielPodolsky
-- Email: lambodol76@gmail.com
+| Command                | Description                         |
+| ---------------------- | ----------------------------------- |
+| `npm run dev`          | Start development server with HMR   |
+| `npm run build`        | Type-check and build for production |
+| `npm run preview`      | Preview production build locally    |
+| `npm run lint`         | Run ESLint on all files             |
+| `npm run format`       | Format code with Prettier           |
+| `npm run format:check` | Check formatting without writing    |
 
----
-Built with ❤️ by Daniel Podolsky
+## Key Features
 
----
+### Performance Considerations
+
+- Code splitting via React.lazy and Suspense
+- Image optimization with vite-plugin-image-optimizer
+- Tailwind CSS v4 automatic tree-shaking
+
+## Development Status
+
+### Planned
+
+- [ ] Component testing with Vitest
+- [ ] GitHub Actions CI/CD pipeline
+- [ ] Vercel deployment with analytics
+
+## License
+
+MIT
+
+## Contact
+
+- **LinkedIn**: [daniel-podolsky-341901242](https://www.linkedin.com/in/daniel-podolsky-341901242/)
+- **GitHub**: [DanielPodolsky](https://github.com/DanielPodolsky)
+- **Email**: lambodol76@gmail.com
