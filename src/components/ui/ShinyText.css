@@ -13,6 +13,7 @@
   display: inline-block;
   animation: shine 5s linear infinite;
   overflow: visible;
+  line-height: 1.3;
 }
 
 /* Light mode: Black text with white glare */
