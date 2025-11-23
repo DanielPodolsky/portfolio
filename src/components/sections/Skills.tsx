@@ -10,14 +10,14 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="border-b border-neutral-800/80 dark:border-neutral-200/80 py-12 md:py-16"
+      className="border-b border-neutral-200/80 dark:border-neutral-800/80 py-12 md:py-16"
     >
       {/* Section header */}
       <div className="mb-8">
-        <h2 className="text-xl font-semibold tracking-tight text-neutral-50 dark:text-neutral-900 md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
           Technical Skills
         </h2>
-        <p className="mt-2 text-sm text-neutral-400 dark:text-neutral-500">
+        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
           Focused on the MERN stack, AWS, and generative AI systems, with
           disciplined development practices.
         </p>
@@ -62,7 +62,7 @@ function SkillPill({ skill }: { skill: (typeof skills)[number] }) {
 
   return (
     <div
-      className="flex items-center gap-2 rounded-full border border-neutral-800 dark:border-neutral-200 bg-neutral-950/70 dark:bg-neutral-50/70 px-4 py-2 text-sm font-medium text-neutral-100 dark:text-neutral-900 
+      className="flex items-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-4 py-2 text-sm font-medium text-neutral-900 dark:text-neutral-100
   whitespace-nowrap"
     >
       <Icon className="h-4 w-4" />
