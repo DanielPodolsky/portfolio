@@ -10,13 +10,13 @@ interface HeaderProps {
 export function Header({ onResumeClick }: HeaderProps) {
   const { theme, toggleTheme } = useTheme()
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-neutral-800/80 dark:border-neutral-200/80 bg-black/70 dark:bg-white/70 backdrop-blur-xl transition-colors duration-500">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-neutral-200/80 dark:border-neutral-800/80 bg-white/70 dark:bg-black/70 backdrop-blur-xl transition-colors duration-500">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         {/* Left Section - Logo + Name */}
         <a href="#top" className="flex items-center space-x-2 group">
           <div
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 dark:bg-neutral-100 border border-neutral-700/70 dark:border-neutral-300/70 group-hover:border-neutral-400/80 
-  dark:group-hover:border-neutral-600/80 transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-300/70 dark:border-neutral-700/70 group-hover:border-neutral-600/80 
+  dark:group-hover:border-neutral-400/80 transition-colors"
           >
             <img
               src={theme === "dark" ? LogoLight : LogoDark}
@@ -25,38 +25,38 @@ export function Header({ onResumeClick }: HeaderProps) {
             />
           </div>
           <div className="hidden text-left md:block">
-            <div className="text-xs font-medium uppercase tracking-[0.22em] text-neutral-400 dark:text-neutral-600">
+            <div className="text-xs font-medium uppercase tracking-[0.22em] text-neutral-600 dark:text-neutral-400">
               Software Engineer
             </div>
-            <div className="text-sm font-semibold tracking-tight text-neutral-100 dark:text-neutral-900">
+            <div className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
               Daniel Podolsky
             </div>
           </div>
         </a>
 
         {/* Middle Section - Desktop Nav Links */}
-        <nav className="hidden items-center space-x-8 text-sm text-neutral-300 dark:text-neutral-700 md:flex">
+        <nav className="hidden items-center space-x-8 text-sm text-neutral-700 dark:text-neutral-300 md:flex">
           <a
             href="#about"
-            className="transition-colors hover:text-white dark:hover:text-neutral-900"
+            className="transition-colors hover:text-neutral-900 dark:hover:text-white"
           >
             About
           </a>
           <a
             href="#projects"
-            className="transition-colors hover:text-white dark:hover:text-neutral-900"
+            className="transition-colors hover:text-neutral-900 dark:hover:text-white"
           >
             Projects
           </a>
           <a
             href="#blogs"
-            className="transition-colors hover:text-white dark:hover:text-neutral-900"
+            className="transition-colors hover:text-neutral-900 dark:hover:text-white"
           >
             Blogs
           </a>
           <a
             href="#skills"
-            className="transition-colors hover:text-white dark:hover:text-neutral-900"
+            className="transition-colors hover:text-neutral-900 dark:hover:text-white"
           >
             Skills
           </a>
@@ -66,8 +66,8 @@ export function Header({ onResumeClick }: HeaderProps) {
         <div className="flex items-center space-x-3">
           <a
             href="#contact"
-            className="hidden rounded-full border border-neutral-700/80 dark:border-neutral-300/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-200 dark:text-neutral-700 shadow-sm transition-all 
-  hover:border-neutral-300 dark:hover:border-neutral-500 hover:-translate-y-[1px] hover:text-white dark:hover:text-neutral-900 hover:shadow-lg/50 md:inline-flex"
+            className="hidden rounded-full border border-neutral-300/80 dark:border-neutral-700/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200 shadow-sm transition-all 
+  hover:border-neutral-500 dark:hover:border-neutral-300 hover:-translate-y-[1px] hover:text-neutral-900 dark:hover:text-white hover:shadow-lg/50 md:inline-flex"
           >
             <Mail className="mr-1.5 mt-0.5 h-[14px] w-[14px]" />
             Contact
@@ -75,8 +75,8 @@ export function Header({ onResumeClick }: HeaderProps) {
           {/* Theme Toggle*/}
           <button
             onClick={toggleTheme}
-            className="inline-flex items-center rounded-full border border-neutral-700/80 dark:border-neutral-300/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-200 dark:text-neutral-700 shadow-sm transition-all 
-  hover:border-neutral-300 dark:hover:border-neutral-500 hover:-translate-y-[1px] hover:text-white dark:hover:text-neutral-900 hover:shadow-lg/50"
+            className="inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200 shadow-sm transition-all 
+  hover:border-neutral-500 dark:hover:border-neutral-300 hover:-translate-y-[1px] hover:text-neutral-900 dark:hover:text-white hover:shadow-lg/50"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
@@ -87,8 +87,8 @@ export function Header({ onResumeClick }: HeaderProps) {
           </button>
           <button
             onClick={onResumeClick}
-            className="inline-flex items-center rounded-full bg-neutral-100 dark:bg-neutral-900 px-3.5 py-1.5 text-xs font-medium tracking-tight text-black dark:text-white shadow-sm transition-all duration-150
-  hover:-translate-y-[1px] hover:bg-white dark:hover:bg-neutral-800"
+            className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-3.5 py-1.5 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+  hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
           >
             <FileText className="mr-1.5 h-[14px] w-[14px]" />
             Resume
