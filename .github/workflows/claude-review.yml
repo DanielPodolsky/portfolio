@@ -1,28 +1,42 @@
 name: Claude Code Review
 
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-  issue_comment:
-    types: [created]
+  on:
+    pull_request:
+      types: [opened, synchronize, reopened]
+    issue_comment:
+      types: [created]
 
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
+  permissions:
+    contents: read
+    pull-requests: write
+    issues: write
+    id-token: write
 
-jobs:
-  claude-review:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  jobs:
+    claude-review:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
 
-      - name: Claude Code Action Official
-        uses: anthropics/claude-code-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "Review this PR thoroughly. Check for bugs, code quality, security issues, and suggest improvements."
+        - name: Claude Code Action
+          uses: anthropics/claude-code-action@v1
+          with:
+            anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+            prompt: |
+              REPO: ${{ github.repository }}
+              PR NUMBER: ${{ github.event.pull_request.number }}
+
+              Review this PR thoroughly. Check for:
+              - Code quality and best practices
+              - Potential bugs or issues
+              - Security implications
+              - Performance considerations
+
+              Use `gh pr comment` for top-level feedback.
+              Only post GitHub comments - don't submit review text as messages.
+
+            claude_args: |
+              --allowedTools "Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
