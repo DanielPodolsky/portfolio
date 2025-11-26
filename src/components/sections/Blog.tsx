@@ -2,7 +2,6 @@ import { Linkedin, MessageCircleCode, Twitter } from "lucide-react"
 import { BlogCard } from "@/components/ui/BlogCard"
 import { blogPosts } from "@/data/blogPosts"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
-import { use } from "react"
 
 function Blog() {
   const headerRef = useScrollAnimation({ duration: 700 })

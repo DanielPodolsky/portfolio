@@ -49,7 +49,7 @@ function Contact({ onResumeClick }: ContactProps) {
     <section id="contact" className="pt-12 md:pt-16">
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         {/* Left: Contact info */}
-        <div ref={leftColumnRef as React.RefObject<HTMLDivElement>}>
+        <div ref={headerRef as React.RefObject<HTMLDivElement>}>
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
             Let's Talk
           </h2>
