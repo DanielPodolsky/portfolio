@@ -10,7 +10,6 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
-  id-token: write
   
 jobs:
   claude-review:
@@ -31,7 +30,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
             REPO: ${{ github.repository }}
-            PR NUMBER: ${{ github.event.pull_request.number }}
+            PR NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
 
             Review this PR thoroughly. Check for:
             - Code quality and best practices
