@@ -27,7 +27,7 @@ function Blog() {
       {/* Section header */}
       <div
         ref={headerRef as React.RefObject<HTMLDivElement>}
-        className="flex justify-between align-center"
+        className="flex justify-between items-center"
       >
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">

@@ -30,7 +30,7 @@ export default function BounceCards({
   cardSize = 200,
 }: BounceCardsProps) {
   const instanceId = useRef(
-    `bounce-${Math.random().toString(36).substr(2, 9)}`
+    `bounce-${Math.random().toString(36).substring(2, 9)}`
   ).current
 
   const getNoRotationTransform = (transformStr: string): string => {

@@ -39,11 +39,6 @@ function Hero({ onResumeClick }: HeroProps) {
       miniInfoCardsRef.current,
     ]
 
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
-
     // Animation elements
     const elements = [
       nameRef.current,
@@ -57,59 +52,63 @@ function Hero({ onResumeClick }: HeroProps) {
     // Only animate if all elements exist
     if (elements.some(el => !el)) return
 
-    if (prefersReducedMotion) {
-      // Reduced motion version
+    // Check for reduced motion preference inside useEffect
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
 
-      // Group 1: Name + Picture (together, 0ms delay)
-      gsap.fromTo(
-        topGroup,
-        { opacity: 0.8 },
-        { opacity: 1, duration: 0.3, ease: "power2.out" }
-      )
+    // Use gsap.context() for scoped cleanup - avoids race conditions
+    const ctx = gsap.context(() => {
+      if (prefersReducedMotion) {
+        // Reduced motion version
 
-      // Group 2: Description (50ms delay)
-      gsap.fromTo(
-        group2,
-        { opacity: 0.8 },
-        { opacity: 1, duration: 0.3, delay: 0.05, ease: "power2.out" }
-      )
+        // Group 1: Name + Picture (together, 0ms delay)
+        gsap.fromTo(
+          topGroup,
+          { opacity: 0.8 },
+          { opacity: 1, duration: 0.3, ease: "power2.out" }
+        )
 
-      // Group 3: Bottom section (100ms delay)
-      gsap.fromTo(
-        bottomGroup,
-        { opacity: 0.8 },
-        { opacity: 1, duration: 0.3, delay: 0.1, ease: "power2.out" }
-      )
-    } else {
-      // Normal motion version
+        // Group 2: Description (50ms delay)
+        gsap.fromTo(
+          group2,
+          { opacity: 0.8 },
+          { opacity: 1, duration: 0.3, delay: 0.05, ease: "power2.out" }
+        )
 
-      // Group 1: Name + Picture (together, 0ms delay)
-      gsap.fromTo(
-        topGroup,
-        { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-      )
+        // Group 3: Bottom section (100ms delay)
+        gsap.fromTo(
+          bottomGroup,
+          { opacity: 0.8 },
+          { opacity: 1, duration: 0.3, delay: 0.1, ease: "power2.out" }
+        )
+      } else {
+        // Normal motion version
 
-      // Group 2: Description (100ms delay)
-      gsap.fromTo(
-        descriptionRef.current,
-        { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.5, delay: 0.1, ease: "power2.out" }
-      )
+        // Group 1: Name + Picture (together, 0ms delay)
+        gsap.fromTo(
+          topGroup,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        )
 
-      // Group 3: Bottom section (200ms delay)
-      gsap.fromTo(
-        bottomGroup,
-        { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.5, delay: 0.2, ease: "power2.out" }
-      )
-    }
-    return () => {
-      // Kill all animations on the elements
-      elements.forEach(el => {
-        if (el) gsap.killTweensOf(el)
-      })
-    }
+        // Group 2: Description (100ms delay)
+        gsap.fromTo(
+          descriptionRef.current,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.5, delay: 0.1, ease: "power2.out" }
+        )
+
+        // Group 3: Bottom section (200ms delay)
+        gsap.fromTo(
+          bottomGroup,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.5, delay: 0.2, ease: "power2.out" }
+        )
+      }
+    })
+
+    return () => ctx.revert() // Clean up all GSAP animations in this context
   }, [])
 
   return (
