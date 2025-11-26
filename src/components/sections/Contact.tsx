@@ -1,12 +1,17 @@
 import { Mail, Linkedin, Github, Download, Send } from "lucide-react"
 import { useState, type FormEvent } from "react"
 import emailjs from "@emailjs/browser"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 interface ContactProps {
   onResumeClick: () => void
 }
 
 function Contact({ onResumeClick }: ContactProps) {
+  const headerRef = useScrollAnimation({ duration: 700 })
+  const leftColumnRef = useScrollAnimation({ duration: 700, delay: 0.15 })
+  const rightColumnRef = useScrollAnimation({ duration: 700, delay: 0.3 })
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,7 +49,7 @@ function Contact({ onResumeClick }: ContactProps) {
     <section id="contact" className="pt-12 md:pt-16">
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         {/* Left: Contact info */}
-        <div>
+        <div ref={leftColumnRef as React.RefObject<HTMLDivElement>}>
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
             Let's Talk
           </h2>
@@ -55,75 +60,78 @@ function Contact({ onResumeClick }: ContactProps) {
           </p>
 
           {/* Contact cards */}
-          <div className="mt-6 space-y-4 text-sm">
-            <a
-              href="mailto:lambodol76@gmail.com"
-              className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
+          <div ref={leftColumnRef as React.RefObject<HTMLDivElement>}>
+            <div className="mt-6 space-y-4 text-sm">
+              <a
+                href="mailto:lambodol76@gmail.com"
+                className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
   dark:hover:border-neutral-600"
-            >
-              <Mail className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
-                  Email
-                </p>
-                <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
-                  lambodol76@gmail.com
-                </p>
-              </div>
-            </a>
+              >
+                <Mail className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
+                    Email
+                  </p>
+                  <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
+                    lambodol76@gmail.com
+                  </p>
+                </div>
+              </a>
 
-            <a
-              href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
+              <a
+                href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
   dark:hover:border-neutral-600"
-            >
-              <Linkedin className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
-                  LinkedIn
-                </p>
-                <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
-                  Connect on LinkedIn
-                </p>
-              </div>
-            </a>
+              >
+                <Linkedin className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
+                    LinkedIn
+                  </p>
+                  <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
+                    Connect on LinkedIn
+                  </p>
+                </div>
+              </a>
 
-            <a
-              href="https://github.com/DanielPodolsky"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
+              <a
+                href="https://github.com/DanielPodolsky"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 px-3.5 py-3 transition-colors hover:border-neutral-400
   dark:hover:border-neutral-600"
-            >
-              <Github className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
-                  GitHub
-                </p>
-                <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
-                  See my work
-                </p>
-              </div>
-            </a>
-          </div>
+              >
+                <Github className="h-[18px] w-[18px] text-neutral-700 dark:text-neutral-200" />
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
+                    GitHub
+                  </p>
+                  <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
+                    See my work
+                  </p>
+                </div>
+              </a>
+            </div>
 
-          {/* CTA buttons */}
-          <div className="mt-6 flex flex-wrap gap-3 text-xs">
-            <button
-              onClick={onResumeClick}
-              className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+            {/* CTA buttons */}
+            <div className="mt-6 flex flex-wrap gap-3 text-xs">
+              <button
+                onClick={onResumeClick}
+                className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
-            >
-              <Download className="mr-1.5 h-[15px] w-[15px]" />
-              View Resume
-            </button>{" "}
+              >
+                <Download className="mr-1.5 h-[15px] w-[15px]" />
+                View Resume
+              </button>{" "}
+            </div>
           </div>
         </div>
 
         {/* Right: Contact form */}
         <div
+          ref={rightColumnRef as React.RefObject<HTMLDivElement>}
           id="contact-form"
           className="rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/80 dark:bg-neutral-950/80 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.1)] dark:shadow-[0_18px_45px_rgba(0,0,0,0.85)]"
         >

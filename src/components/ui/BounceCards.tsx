@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useRef } from "react"
 import { gsap } from "gsap"
 
 interface BounceCardsProps {
@@ -19,9 +19,6 @@ export default function BounceCards({
   images = [],
   containerWidth = 400,
   containerHeight = 400,
-  animationDelay = 0.5,
-  animationStagger = 0.06,
-  easeType = "elastic.out(1, 0.8)",
   transformStyles = [
     "rotate(10deg) translate(-170px)",
     "rotate(5deg) translate(-85px)",
@@ -32,18 +29,9 @@ export default function BounceCards({
   enableHover = false,
   cardSize = 200,
 }: BounceCardsProps) {
-  useEffect(() => {
-    gsap.fromTo(
-      ".card",
-      { scale: 0 },
-      {
-        scale: 1,
-        stagger: animationStagger,
-        ease: easeType,
-        delay: animationDelay,
-      }
-    )
-  }, [animationDelay, animationStagger, easeType])
+  const instanceId = useRef(
+    `bounce-${Math.random().toString(36).substr(2, 9)}`
+  ).current
 
   const getNoRotationTransform = (transformStr: string): string => {
     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr)
@@ -77,7 +65,7 @@ export default function BounceCards({
     if (!enableHover) return
 
     images.forEach((_, i) => {
-      const selector = `.card-${i}`
+      const selector = `.${instanceId}-card-${i}`
       gsap.killTweensOf(selector)
 
       const baseTransform = transformStyles[i] || "none"
@@ -112,7 +100,7 @@ export default function BounceCards({
     if (!enableHover) return
 
     images.forEach((_, i) => {
-      const selector = `.card-${i}`
+      const selector = `.${instanceId}-card-${i}`
       gsap.killTweensOf(selector)
 
       const baseTransform = transformStyles[i] || "none"
@@ -136,7 +124,7 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute border-8 border-white rounded-[30px] overflow-hidden`}
+          className={`${instanceId}-card ${instanceId}-card-${idx} absolute border-8 border-white rounded-[30px] overflow-hidden`}
           style={{
             width: cardSize,
             height: cardSize,
@@ -149,7 +137,7 @@ export default function BounceCards({
           <img
             className="w-full h-full object-cover"
             src={src}
-            alt={`card-${idx}`}
+            alt={`${instanceId}-card-${idx}`}
             loading="lazy"
             decoding="async"
           />
