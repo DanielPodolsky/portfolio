@@ -28,17 +28,6 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
     // Don't animate if element does not exist
     if (!elementRef.current) return
 
-    if (!elementRef.current) {
-      console.log("⚠️ Ref is null, animation skipped")
-      return
-    }
-
-    console.log("✅ Animation hook running for element:", elementRef.current)
-    console.log("📊 Options:", {
-      delay: options?.delay,
-      duration: options?.duration,
-    })
-
     // Performance optimiation, hints browser we'll animate these properties
     elementRef.current.style.willChange = "transform, opacity"
 
@@ -57,7 +46,6 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
             start: "top 80%",
             toggleActions: "play none none none",
             once: true,
-            onEnter: () => console.log("🎬 ScrollTrigger fired!"),
           },
           onComplete: () => {
             if (elementRef.current) {
@@ -93,7 +81,6 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
           start: "top 80%",
           toggleActions: "play none none none",
           once: true,
-          onEnter: () => console.log("🎬 ScrollTrigger fired!"),
         },
         onComplete: () => {
           if (elementRef.current) {
@@ -111,7 +98,13 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
         }
       })
     }
-  }, [options?.delay, options?.duration, slideDistance, prefersReducedMotion])
+  }, [
+    options?.delay,
+    options?.variant,
+    options?.duration,
+    slideDistance,
+    prefersReducedMotion,
+  ])
 
   return elementRef
 }

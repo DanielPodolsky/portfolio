@@ -104,6 +104,12 @@ function Hero({ onResumeClick }: HeroProps) {
         { opacity: 1, y: 0, duration: 0.5, delay: 0.2, ease: "power2.out" }
       )
     }
+    return () => {
+      // Kill all animations on the elements
+      elements.forEach(el => {
+        if (el) gsap.killTweensOf(el)
+      })
+    }
   }, [])
 
   return (
