@@ -1,9 +1,7 @@
 interface ScrollAnimationOptions {
-  // Optional settings
   delay?: number
   duration?: number
   yOffset?: number
-  disable?: boolean
   variant?: "default" | "slideLeft" | "slideRight"
 }
 
@@ -74,6 +72,9 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
           ? { opacity: 1, x: 0 }
           : { opacity: 1, y: 0 }
 
+      // Track scroll listener for cleanup
+      let scrollListener: (() => void) | null = null
+
       // Create paused animation - won't run until triggered
       const tween = gsap.fromTo(element, startProps, {
         ...endProps,
@@ -90,25 +91,32 @@ export function useScrollAnimation(options?: ScrollAnimationOptions) {
         },
       })
 
-      // ScrollTrigger only plays when user has actually scrolled
+      // ScrollTrigger plays when element enters viewport
       ScrollTrigger.create({
         trigger: element,
         start: "top 80%",
         once: true,
         onEnter: () => {
-          // Only animate if user has scrolled (prevents immediate trigger on page load)
+          // If user has scrolled, play immediately
           if (window.scrollY > 10) {
             tween.play()
           } else {
-            // If not scrolled yet, wait for first scroll then play
-            const onFirstScroll = () => {
+            // If page just loaded, wait for first scroll to play
+            scrollListener = () => {
               tween.play()
-              window.removeEventListener("scroll", onFirstScroll)
+              scrollListener = null
             }
-            window.addEventListener("scroll", onFirstScroll, { once: true })
+            window.addEventListener("scroll", scrollListener, { once: true })
           }
         },
       })
+
+      // Cleanup: remove scroll listener if component unmounts before scroll
+      return () => {
+        if (scrollListener) {
+          window.removeEventListener("scroll", scrollListener)
+        }
+      }
     }
   }, {
     scope: elementRef,
