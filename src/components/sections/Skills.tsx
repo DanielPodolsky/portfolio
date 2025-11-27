@@ -1,7 +1,11 @@
 import { Marquee } from "@/components/ui/Marquee"
 import { skills } from "@/data/skills"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 function Skills() {
+  const headerRef = useScrollAnimation({ duration: 700 })
+  const skillsRef = useScrollAnimation({ duration: 700, delay: 0.2 })
+
   // Filter skills by category
   const coreSkills = skills.filter(s => s.category === "core")
   const cloudSkills = skills.filter(s => s.category === "cloud")
@@ -13,7 +17,7 @@ function Skills() {
       className="border-b border-neutral-200/80 dark:border-neutral-800/80 py-12 md:py-16"
     >
       {/* Section header */}
-      <div className="mb-8">
+      <div ref={headerRef as React.RefObject<HTMLDivElement>} className="mb-8">
         <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
           Technical Skills
         </h2>
@@ -24,7 +28,10 @@ function Skills() {
       </div>
 
       {/* Marquee rows */}
-      <div className="space-y-4">
+      <div
+        ref={skillsRef as React.RefObject<HTMLDivElement>}
+        className="space-y-4"
+      >
         {/* Row 1: Core Stack - left */}
         <Marquee speed={25} direction="left">
           <div className="flex gap-3 pr-3">
