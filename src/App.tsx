@@ -1,6 +1,7 @@
 import { useState, lazy, Suspense } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from "@gsap/react"
 import { Layout } from "@/components/layout/Layout"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
@@ -23,7 +24,7 @@ function SectionLoader() {
 }
 
 // Register GSAP plugin
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)

@@ -1,6 +1,4 @@
 import { StatusBadge } from "@/components/ui/StatusBadge"
-import { useRef, useEffect } from "react"
-import { gsap } from "gsap"
 import {
   GraduationCap,
   Code2,
@@ -23,94 +21,6 @@ interface HeroProps {
 }
 
 function Hero({ onResumeClick }: HeroProps) {
-  const nameRef = useRef<HTMLDivElement>(null)
-  const profilePicRef = useRef<HTMLDivElement>(null)
-  const descriptionRef = useRef<HTMLDivElement>(null)
-  const ctaGroupRef = useRef<HTMLDivElement>(null)
-  const achievementsRef = useRef<HTMLDivElement>(null)
-  const miniInfoCardsRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const topGroup = [nameRef.current, profilePicRef.current]
-    const group2 = [descriptionRef.current]
-    const bottomGroup = [
-      ctaGroupRef.current,
-      achievementsRef.current,
-      miniInfoCardsRef.current,
-    ]
-
-    // Animation elements
-    const elements = [
-      nameRef.current,
-      profilePicRef.current,
-      descriptionRef.current,
-      ctaGroupRef.current,
-      achievementsRef.current,
-      miniInfoCardsRef.current,
-    ]
-
-    // Only animate if all elements exist
-    if (elements.some(el => !el)) return
-
-    // Check for reduced motion preference inside useEffect
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
-
-    // Use gsap.context() for scoped cleanup - avoids race conditions
-    const ctx = gsap.context(() => {
-      if (prefersReducedMotion) {
-        // Reduced motion version
-
-        // Group 1: Name + Picture (together, 0ms delay)
-        gsap.fromTo(
-          topGroup,
-          { opacity: 0.8 },
-          { opacity: 1, duration: 0.3, ease: "power2.out" }
-        )
-
-        // Group 2: Description (50ms delay)
-        gsap.fromTo(
-          group2,
-          { opacity: 0.8 },
-          { opacity: 1, duration: 0.3, delay: 0.05, ease: "power2.out" }
-        )
-
-        // Group 3: Bottom section (100ms delay)
-        gsap.fromTo(
-          bottomGroup,
-          { opacity: 0.8 },
-          { opacity: 1, duration: 0.3, delay: 0.1, ease: "power2.out" }
-        )
-      } else {
-        // Normal motion version
-
-        // Group 1: Name + Picture (together, 0ms delay)
-        gsap.fromTo(
-          topGroup,
-          { opacity: 0, y: 15 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-        )
-
-        // Group 2: Description (100ms delay)
-        gsap.fromTo(
-          descriptionRef.current,
-          { opacity: 0, y: 15 },
-          { opacity: 1, y: 0, duration: 0.5, delay: 0.1, ease: "power2.out" }
-        )
-
-        // Group 3: Bottom section (200ms delay)
-        gsap.fromTo(
-          bottomGroup,
-          { opacity: 0, y: 15 },
-          { opacity: 1, y: 0, duration: 0.5, delay: 0.2, ease: "power2.out" }
-        )
-      }
-    })
-
-    return () => ctx.revert() // Clean up all GSAP animations in this context
-  }, [])
-
   return (
     <section
       id="about"
@@ -118,7 +28,7 @@ function Hero({ onResumeClick }: HeroProps) {
     >
       {/* Left Column */}
       <div className="flex flex-col space-y-6">
-        <div ref={nameRef}>
+        <div>
           {/* Status */}
           <StatusBadge text="Available for Full Stack & AI Software Engineer roles" />
 
@@ -137,10 +47,7 @@ function Hero({ onResumeClick }: HeroProps) {
         </div>
 
         {/* Description */}
-        <div
-          ref={descriptionRef}
-          className="space-y-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 md:text-[15px] text-justify hyphens-auto"
-        >
+        <div className="space-y-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 md:text-[15px] text-justify hyphens-auto">
           <p>
             I became a Full Stack Developer during my CS degree, and when I
             started working with AI, it unlocked something new. Now I build
@@ -171,7 +78,7 @@ function Hero({ onResumeClick }: HeroProps) {
         </div>
 
         {/* CTA */}
-        <div ref={ctaGroupRef} className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3">
           {/* Projects Button */}
           <a
             href="#projects"
@@ -218,10 +125,7 @@ function Hero({ onResumeClick }: HeroProps) {
         </div>
 
         {/* Mini Info Cards */}
-        <div
-          ref={miniInfoCardsRef}
-          className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:items-start"
-        >
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:items-start">
           {/* Education */}
           <SpotlightCard spotlightColor="rgba(56, 189, 248, 0.15)">
             <div className="flex items-center text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-600 dark:text-neutral-500">
@@ -294,7 +198,6 @@ function Hero({ onResumeClick }: HeroProps) {
       <div className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-0 md:space-y-4">
         {/* PROFILE CARD - Visual anchor with heavy shadow */}
         <div
-          ref={profilePicRef}
           className="order-2 md:order-none overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/70 shadow-[0_18px_45px_rgba(0,0,0,0.12)]
   dark:shadow-[0_18px_45px_rgba(0,0,0,0.85)] transition-colors duration-500"
         >
@@ -309,10 +212,7 @@ function Hero({ onResumeClick }: HeroProps) {
           </div>
         </div>
 
-        <div
-          ref={achievementsRef}
-          className="order-1 md:order-none rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60 bg-white/80 dark:bg-neutral-900/40 shadow-md dark:shadow-none px-4 py-3.5 transition-colors duration-500"
-        >
+        <div className="order-1 md:order-none rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60 bg-white/80 dark:bg-neutral-900/40 shadow-md dark:shadow-none px-4 py-3.5 transition-colors duration-500">
           <div className="space-y-2.5">
             {/* 1st Place - H.I.T. Hackathon */}
             <div className="flex items-start gap-2">
