@@ -38,9 +38,9 @@ function Hero({ onResumeClick }: HeroProps) {
               text="Daniel Podolsky"
               disabled={false}
               speed={7}
-              className="custom-class"
+              className="custom-class font-display"
             />
-            <p className="mt-2 text-base font-medium text-neutral-600 dark:text-neutral-300 sm:text-lg">
+            <p className="font-heading mt-2 tracking-wide text-base font-medium text-neutral-600 dark:text-neutral-300 sm:text-lg">
               Full Stack Development | AI Integration Specialist
             </p>
           </div>
@@ -82,7 +82,7 @@ function Hero({ onResumeClick }: HeroProps) {
           {/* Projects Button */}
           <a
             href="#projects"
-            className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+            className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
           >
             <Eye className="mr-1.5 h-[15px] w-[15px]" />
@@ -92,7 +92,7 @@ function Hero({ onResumeClick }: HeroProps) {
           {/* Resume Button */}
           <button
             onClick={onResumeClick}
-            className="inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
+            className="font-heading inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
   transition-all hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:-translate-y-[1px]"
           >
             <FileText className="mr-1.5 h-[15px] w-[15px]" />
@@ -104,7 +104,7 @@ function Hero({ onResumeClick }: HeroProps) {
             href="https://github.com/DanielPodolsky"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
+            className="font-heading inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
   transition-all hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:-translate-y-[1px]"
           >
             <Github className="mr-1.5 h-[15px] w-[15px]" />
@@ -116,7 +116,7 @@ function Hero({ onResumeClick }: HeroProps) {
             href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
+            className="font-heading inline-flex items-center rounded-full border border-neutral-300/80 dark:border-neutral-700/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200
   transition-all hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:-translate-y-[1px]"
           >
             <Linkedin className="mr-1.5 h-[15px] w-[15px]" />

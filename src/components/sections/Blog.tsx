@@ -38,15 +38,15 @@ function Blog() {
           </p>
         </div>
         <div className="text-right hidden md:flex md:flex-col md:justify-between">
-          <p className="text-sm font-medium tracking-tight text-neutral-900 dark:text-neutral-50 md:block pt-1">
+          <p className="font-heading text-sm font-medium tracking-tight text-neutral-900 dark:text-neutral-50 md:block pt-1">
             Find me on social platforms:
           </p>
-          <div>
+          <div className="mt-2 flex justify-end space-x-4">
             <a
               href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden mr-1.5 items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
+              className="font-heading hidden items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
             >
               <Linkedin className="mr-0.5 h-4 w-4" />
               LinkedIn
@@ -55,7 +55,7 @@ function Blog() {
               href="https://bsky.app/profile/0shotdev.bsky.social"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden mr-1.5 items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
+              className="font-heading hidden items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
             >
               <MessageCircleCode className="mr-0.5 h-4 w-4" />
               BlueSky
@@ -64,7 +64,7 @@ function Blog() {
               href="https://x.com/0shot_dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
+              className="font-heading hidden items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
             >
               <Twitter className="mr-0.5 h-4 w-4" />
               X.com

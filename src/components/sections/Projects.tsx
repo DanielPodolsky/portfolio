@@ -36,7 +36,7 @@ function Projects() {
           href="https://github.com/DanielPodolsky?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center text-xs font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
+          className="font-heading hidden items-center text-xs font-medium text-neutral-600 dark:text-neutral-300 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline md:inline-flex"
         >
           <Github className="mr-1.5 h-4 w-4" />
           View all repositories
@@ -49,7 +49,7 @@ function Projects() {
           <div
             key={project.id}
             ref={projectRefs[index] as React.RefObject<HTMLDivElement>}
-            className="opacity-0"
+            className="opacity-0 h-full"
           >
             <ProjectCard project={project} />
           </div>

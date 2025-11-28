@@ -119,7 +119,7 @@ function Contact({ onResumeClick }: ContactProps) {
             <div className="mt-6 flex flex-wrap gap-3 text-xs">
               <button
                 onClick={onResumeClick}
-                className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+                className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
               >
                 <Download className="mr-1.5 h-[15px] w-[15px]" />
@@ -218,7 +218,7 @@ function Contact({ onResumeClick }: ContactProps) {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+                className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="mr-1.5 h-[15px] w-[15px]" />
