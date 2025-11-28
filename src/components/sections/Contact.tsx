@@ -50,7 +50,7 @@ function Contact({ onResumeClick }: ContactProps) {
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         {/* Left: Contact info */}
         <div ref={headerRef as React.RefObject<HTMLDivElement>}>
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
+          <h2 className="tracking-wide text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
             Let's Talk
           </h2>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -138,7 +138,7 @@ function Contact({ onResumeClick }: ContactProps) {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
             Send a message
           </p>
-          <p className="mt-2 text-[13px] text-neutral-600 dark:text-neutral-300">
+          <p className="mt-2 text-[14px] text-neutral-600 dark:text-neutral-300">
             Share a role description, problem space, or idea. I'll do my best to
             respond quickly.
           </p>

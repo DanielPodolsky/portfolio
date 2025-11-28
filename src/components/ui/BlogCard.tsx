@@ -90,7 +90,7 @@ export function BlogCard({ post }: BlogCardProps) {
         </span>
         {post.readTime && (
           <span className="inline-flex items-center">
-            <Clock className="mr-1 h-3.5 w-3.5" />
+            <Clock className="mr-1 h-3 w-3" />
             {post.readTime}
           </span>
         )}

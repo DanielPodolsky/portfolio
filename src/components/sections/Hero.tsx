@@ -82,7 +82,7 @@ function Hero({ onResumeClick }: HeroProps) {
           {/* Projects Button */}
           <a
             href="#projects"
-            className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+            className="tracking-wide font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
           >
             <Eye className="mr-1.5 h-[15px] w-[15px]" />

@@ -24,8 +24,8 @@ function Projects() {
         className="opacity-0 flex items-center justify-between"
       >
         <div>
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
-            Featured projects
+          <h2 className="tracking-wide text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
+            Featured Projects
           </h2>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
             Each project is built around a concrete problem, measurable impact,
