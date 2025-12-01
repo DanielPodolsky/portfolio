@@ -33,12 +33,12 @@ function Hero({ onResumeClick }: HeroProps) {
           <StatusBadge text="Available for Full Stack & AI Software Engineer roles" />
 
           {/* Title & Subtitle */}
-          <div className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-4xl lg:text-5xl">
+          <div className="text-3xl tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-4xl lg:text-5xl">
             <ShinyText
               text="Daniel Podolsky"
               disabled={false}
               speed={7}
-              className="custom-class font-display"
+              className="custom-class font-heading"
             />
             <p className="font-heading mt-2 tracking-wide text-base font-medium text-neutral-600 dark:text-neutral-300 sm:text-lg">
               Full Stack Development | AI Integration Specialist
