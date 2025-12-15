@@ -8,12 +8,12 @@ export function ChatPanel({ onClose, isClosing, children }: ChatPanelProps) {
   return (
     <>
       <div
-        className={`fixed bottom-20 right-4
-          w-[calc(100%-2rem)] sm:w-[550px]
-          h-[500px]
+        className={`fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4
+          w-[calc(100%-2rem)] sm:w-[400px] md:w-[500px] lg:w-[550px] h-[calc(100dvh-10rem)]
+          sm:h-[550px]
           flex flex-col
           rounded-2xl shadow-xl
-          bg-white dark:bg-neutral-900
+          bg-gradient-to-br from-orange-100 to-white dark:from-neutral-900 dark:via-neutral-900 dark:to-amber-950
           border border-neutral-200 dark:border-neutral-800
           overflow-hidden
           ${
