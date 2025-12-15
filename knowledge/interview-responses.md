@@ -1,9 +1,10 @@
 # Interview Responses
 
 ## Tell Me About Yourself
+
 ### Also: Introduce yourself, Self introduction, Who are you, What's your background, ספר לי על עצמך, מי אתה
 
-I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and Generative AI integration. I recently finished my CS degree at HIT with an 89 GPA and an innovation honor. During my studies, I won first place at HIT's hackathon and second nationally at the AWS Public Sector Hackathon. Before that, I served as a combat soldier in the IDF - combat medic and drone operator - which taught me to stay calm under pressure and lead in high-stakes situations. I'm looking for a role where I can build impactful products and keep growing at the intersection of development and AI.
+I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and Generative AI integration. I recently finished my CS degree at HIT with an 89 GPA and an innovation honor. During my studies, I won first place at HIT's hackathon and second place nationally at the AWS Public Sector Hackathon. Before that, I served as a combat soldier in the IDF - combat medic and drone operator - which taught me to stay calm under pressure and lead in high-stakes situations. I'm looking for a role where I can build impactful products and keep growing at the intersection of development and AI.
 
 ### Hebrew Version
 
@@ -12,6 +13,7 @@ I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and Generativ
 ---
 
 ## Tell Me About a Challenging Project
+
 ### Also: Describe a difficult project, What's a project you're proud of, Tell me about MentorHIT, ספר לי על פרויקט מאתגר
 
 During a hackathon at my college, we were challenged to use Generative AI to improve the student experience at H.I.T.

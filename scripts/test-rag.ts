@@ -32,7 +32,7 @@ async function retrieveContext(query: string): Promise<string> {
 }
 
 async function test() {
-  const query = "tell me about yourself"
+  const query = "do you play any games"
   console.log("Query:", query)
   console.log("\n========================================\n")
 
