@@ -38,7 +38,7 @@ async function retrieveContext(query: string): Promise<string> {
   })
 
   return result.matches
-    .slice(0, 3)
+    .slice(0, 1)
     .map(match => match.metadata?.text)
     .filter(Boolean)
     .join("\n\n")

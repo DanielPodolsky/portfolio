@@ -6,8 +6,8 @@ import { join } from "path"
 import OpenAI from "openai"
 
 const KNOWLEDGE_DIR = "./knowledge"
-const CHUNK_SIZE = 500
-const CHUNK_OVERLAP = 100
+const CHUNK_SIZE = 1000
+const CHUNK_OVERLAP = 200
 
 // Load the .md files from the knowledge directory
 async function loadMarkdownFiles(): Promise<
