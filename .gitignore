@@ -42,3 +42,7 @@ og-image.png
 vite.svg
 .vercel
 .env*.local
+
+# Local development files
+scripts/
+knowledge/

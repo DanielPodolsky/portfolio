@@ -33,12 +33,11 @@ async function retrieveContext(query: string): Promise<string> {
 
   const result = await index.query({
     vector: queryEmbeddedVector.data[0].embedding,
-    topK: 5,
+    topK: 3,
     includeMetadata: true,
   })
 
   return result.matches
-    .slice(0, 1)
     .map(match => match.metadata?.text)
     .filter(Boolean)
     .join("\n\n")

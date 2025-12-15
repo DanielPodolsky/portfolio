@@ -1,13 +1,12 @@
 import { Pinecone } from "@pinecone-database/pinecone"
-import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf"
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters"
 import { readFileSync, readdirSync } from "fs"
 import { join } from "path"
 import OpenAI from "openai"
 
 const KNOWLEDGE_DIR = "./knowledge"
-const CHUNK_SIZE = 1000
-const CHUNK_OVERLAP = 200
+const CHUNK_SIZE = 1500
+const CHUNK_OVERLAP = 300
 
 // Load the .md files from the knowledge directory
 async function loadMarkdownFiles(): Promise<
@@ -18,23 +17,6 @@ async function loadMarkdownFiles(): Promise<
     content: readFileSync(join(KNOWLEDGE_DIR, file), "utf-8"),
     source: file,
   }))
-}
-
-// Load the .pdf file from the knowledge directory
-async function loadPDFFiles(): Promise<{ content: string; source: string }[]> {
-  const files = readdirSync(KNOWLEDGE_DIR).filter(f => f.endsWith(".pdf"))
-  const docs: { content: string; source: string }[] = []
-
-  for (const file of files) {
-    const loader = new PDFLoader(join(KNOWLEDGE_DIR, file))
-    const pages = await loader.load()
-    docs.push({
-      content: pages.map(p => p.pageContent).join("\n\n"),
-      source: file,
-    })
-  }
-
-  return docs
 }
 
 async function chunkDocuments(
@@ -108,18 +90,21 @@ async function seed() {
   const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! })
   const index = pc.index(process.env.PINECONE_INDEX!)
 
+  // Clear old vectors before re-seeding
+  console.log("Clearing existing vectors...")
+  await index.deleteAll()
+  console.log("Cleared!\n")
+
   // Load documents
   console.log("Loading documents...")
-  const markdownDocs = await loadMarkdownFiles()
-  const pdfDocs = await loadPDFFiles()
-  const allDocs = [...markdownDocs, ...pdfDocs]
+  const docs = await loadMarkdownFiles()
   console.log(
-    `Loaded ${allDocs.length} documents: ${allDocs.map(d => d.source).join(", ")}\n`
+    `Loaded ${docs.length} documents: ${docs.map(d => d.source).join(", ")}\n`
   )
 
   // Chunk documents
   console.log("Chunking documents...")
-  const chunks = await chunkDocuments(allDocs)
+  const chunks = await chunkDocuments(docs)
   console.log(`Created ${chunks.length} chunks\n`)
 
   // Generate embeddings
