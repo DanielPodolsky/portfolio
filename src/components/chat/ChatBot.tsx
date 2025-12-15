@@ -1,6 +1,6 @@
 import { useChat } from "@ai-sdk/react"
 import { DefaultChatTransport } from "ai"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChatBubble } from "./ChatBubble"
 import { ChatPanel } from "./ChatPanel"
 import { ChatInput } from "./ChatInput"
@@ -10,7 +10,7 @@ export function ChatBot() {
   const [panelState, setPanelState] = useState<"closed" | "open" | "closing">(
     "closed"
   )
-  const { messages, sendMessage, status } = useChat({
+  const { messages, sendMessage, status, error } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
     }),
@@ -33,6 +33,19 @@ export function ChatBot() {
     setInput(e.target.value)
   }
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && panelState === "open") {
+        handleClose()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [panelState])
+
   return (
     <>
       {panelState === "closed" && <ChatBubble onClick={handleOpen} />}
@@ -41,7 +54,7 @@ export function ChatBot() {
         <ChatPanel onClose={handleClose} isClosing={panelState === "closing"}>
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            <MessageList messages={messages} status={status} />
+            <MessageList messages={messages} status={status} error={error} />
           </div>
 
           {/* Input */}

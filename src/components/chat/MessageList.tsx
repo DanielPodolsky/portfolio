@@ -6,10 +6,11 @@ import { TypingIndicator } from "./TypingIndicator"
 interface MessageListProps {
   messages: UIMessage[]
   status: "submitted" | "streaming" | "ready" | "error"
+  error: Error | undefined
 }
 
-export function MessageList({ messages, status }: MessageListProps) {
-  if (messages.length === 0) {
+export function MessageList({ messages, status, error }: MessageListProps) {
+  if (messages.length === 0 && !error) {
     return <EmptyState />
   }
 
@@ -19,6 +20,12 @@ export function MessageList({ messages, status }: MessageListProps) {
         <Message key={index} message={message} />
       ))}
       {status === "submitted" && <TypingIndicator />}
+      {error && (
+        <div className="w-fit mr-auto px-4 py-2 rounded-2xl bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+          Something went wrong. It can be on my side or yours - please try
+          again.
+        </div>
+      )}
     </>
   )
 }

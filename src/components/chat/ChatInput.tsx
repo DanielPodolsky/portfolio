@@ -25,6 +25,7 @@ export function ChatInput({
           required
           placeholder="Ask me anything :)"
           className="flex-1 px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-100"
+          autoFocus
         />
         <button
           type="submit"
