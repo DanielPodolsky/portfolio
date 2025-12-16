@@ -154,7 +154,6 @@ export async function POST(request: Request) {
     pending.catch(console.error)
 
     if (!success) {
-      console.log(`[RateLimit] BLOCKED | IP: ${ip.slice(0, 8)}...`)
       return new Response(
         JSON.stringify({ error: "Too many requests. Please wait a moment." }),
         {
@@ -166,10 +165,6 @@ export async function POST(request: Request) {
         }
       )
     }
-
-    console.log(
-      `[RateLimit] OK | IP: ${ip.slice(0, 8)}... | ${remaining}/${limit}`
-    )
 
     const { messages } = await request.json()
     // Validate input
@@ -199,11 +194,6 @@ export async function POST(request: Request) {
     // Retrieve relevant context from knowledge base
     const { context, matchCount, topScore } =
       await retrieveContext(sanitizedQuery)
-
-    // Debug logging
-    console.log(
-      `[Chat] Query: "${sanitizedQuery.slice(0, 50)}..." | Matches: ${matchCount} | Score: ${topScore.toFixed(3)}`
-    )
 
     // Get system prompt from env (with fallback for safety)
     const systemPromptTemplate = process.env.CHATBOT_SYSTEM_PROMPT
