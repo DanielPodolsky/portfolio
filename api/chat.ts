@@ -2,6 +2,8 @@ import { streamText, UIMessage, convertToModelMessages } from "ai"
 import { openai } from "@ai-sdk/openai"
 import { Pinecone } from "@pinecone-database/pinecone"
 import OpenAI from "openai"
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
 
 // ============================================
 // Configuration
@@ -10,12 +12,29 @@ const MAX_MESSAGE_LENGTH = 1000
 const MAX_MESSAGES = 20
 const SCORE_THRESHOLD = 0.25
 const TOP_K = 5
+const GREETINGS = [
+  "hello",
+  "hi",
+  "hey",
+  "hola",
+  "שלום",
+  "sup",
+  "yo",
+  "good morning",
+  "good afternoon",
+  "good evening",
+  "what's up",
+  "how are you",
+  "howdy",
+]
 
 const FALLBACK_CONTEXT = `
 I'm Daniel, a Full Stack Developer and AI Integration Specialist.
 I build systems that combine thoughtful architecture with the power of LLMs.
 Feel free to ask me about my projects, skills, or background!
 `.trim()
+
+let ratelimit: Ratelimit | null = null
 
 // ============================================
 // Singleton Clients (initialized once per cold start)
@@ -38,14 +57,23 @@ function getPineconeIndex(): ReturnType<Pinecone["index"]> {
   return pineconeIndex
 }
 
-// ============================================
-// Greeting Detection
-// ============================================
-const GREETINGS = [
-  "hello", "hi", "hey", "hola", "שלום", "sup", "yo",
-  "good morning", "good afternoon", "good evening",
-  "what's up", "how are you", "howdy"
-]
+function getRateLimit(): Ratelimit {
+  if (!ratelimit) {
+    ratelimit = new Ratelimit({
+      redis: Redis.fromEnv(),
+      limiter: Ratelimit.slidingWindow(20, "60 s"), // 20 requests per minute
+      prefix: "portfolio-chat",
+      analytics: true,
+      ephemeralCache: new Map(),
+    })
+  }
+  return ratelimit
+}
+
+function getClientIP(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for")
+  return forwarded ? forwarded.split(",")[0].trim() : "127.0.0.1"
+}
 
 function isGreeting(query: string): boolean {
   const normalized = query.toLowerCase().trim()
@@ -120,8 +148,30 @@ async function retrieveContext(query: string): Promise<RetrievalResult> {
 // ============================================
 export async function POST(request: Request) {
   try {
-    const { messages } = await request.json()
+    const ip = getClientIP(request)
+    const { success, limit, remaining, reset, pending } =
+      await getRateLimit().limit(ip)
+    pending.catch(console.error)
 
+    if (!success) {
+      console.log(`[RateLimit] BLOCKED | IP: ${ip.slice(0, 8)}...`)
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please wait a moment." }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        }
+      )
+    }
+
+    console.log(
+      `[RateLimit] OK | IP: ${ip.slice(0, 8)}... | ${remaining}/${limit}`
+    )
+
+    const { messages } = await request.json()
     // Validate input
     if (!Array.isArray(messages) || messages.length === 0) {
       return new Response(
@@ -138,18 +188,22 @@ export async function POST(request: Request) {
     const lastMessage = trimmedMessages[trimmedMessages.length - 1]
 
     // Extract text from parts array (AI SDK v5+ format)
-    const queryText = lastMessage?.parts
-      ?.filter((part: { type: string }) => part.type === "text")
-      .map((part: { type: string; text?: string }) => part.text || "")
-      .join(" ") || ""
+    const queryText =
+      lastMessage?.parts
+        ?.filter((part: { type: string }) => part.type === "text")
+        .map((part: { type: string; text?: string }) => part.text || "")
+        .join(" ") || ""
 
     const sanitizedQuery = queryText.slice(0, MAX_MESSAGE_LENGTH)
 
     // Retrieve relevant context from knowledge base
-    const { context, matchCount, topScore } = await retrieveContext(sanitizedQuery)
+    const { context, matchCount, topScore } =
+      await retrieveContext(sanitizedQuery)
 
     // Debug logging
-    console.log(`[Chat] Query: "${sanitizedQuery.slice(0, 50)}..." | Matches: ${matchCount} | Score: ${topScore.toFixed(3)}`)
+    console.log(
+      `[Chat] Query: "${sanitizedQuery.slice(0, 50)}..." | Matches: ${matchCount} | Score: ${topScore.toFixed(3)}`
+    )
 
     // Get system prompt from env (with fallback for safety)
     const systemPromptTemplate = process.env.CHATBOT_SYSTEM_PROMPT
