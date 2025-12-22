@@ -11,6 +11,9 @@ A performant portfolio website built with React 19 and TypeScript, featuring pre
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?logo=tailwindcss&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5--mini-412991?logo=openai&logoColor=white)
+![Pinecone](https://img.shields.io/badge/Pinecone-Vector_DB-000000?logo=pinecone&logoColor=white)
+![Vercel AI SDK](https://img.shields.io/badge/Vercel_AI_SDK-5.0-000000?logo=vercel&logoColor=white)
 
 ## Overview
 
@@ -39,25 +42,39 @@ The development server starts at `http://localhost:5173`.
 Create a `.env` file in the project root:
 
 ```env
+# Contact Form (EmailJS)
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+# AI Chatbot (RAG)
+OPENAI_API_KEY=your_openai_key
+PINECONE_API_KEY=your_pinecone_key
+PINECONE_INDEX=your_index_name
+CHATBOT_SYSTEM_PROMPT=your_system_prompt
+
+# Rate Limiting
+UPSTASH_REDIS_REST_URL=your_upstash_url
+UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 ```
 
 ## Project Structure
 
 ```
-src/
-├── assets/              # Static images and blog assets
-├── components/
-│   ├── layout/          # Layout primitives (Header, Footer, Layout)
-│   ├── sections/        # Page sections (Hero, Projects, Blog, Skills, Contact)
-│   └── ui/              # Reusable UI components (ProjectCard, BlogCard, SpotlightCard)
-├── contexts/            # React Context providers (ThemeContext)
-├── data/                # Static data (projects, skills, blog posts)
-├── hooks/               # Custom React hooks (planned)
-├── lib/                 # Utility functions (cn helper)
-└── types/               # TypeScript type definitions
+├── api/                 # Vercel serverless functions (RAG chatbot)
+├── knowledge/           # AI knowledge base (markdown files)
+└── src/
+    ├── assets/          # Static images and blog assets
+    ├── components/
+    │   ├── chat/        # AI chatbot components
+    │   ├── layout/      # Layout primitives (Header, Footer, Layout)
+    │   ├── sections/    # Page sections (Hero, Projects, Blog, Skills, Contact)
+    │   └── ui/          # Reusable UI components (ProjectCard, BlogCard, SpotlightCard)
+    ├── contexts/        # React Context providers (ThemeContext)
+    ├── data/            # Static data (projects, skills, blog posts)
+    ├── hooks/           # Custom React hooks (planned)
+    ├── lib/             # Utility functions (cn helper)
+    └── types/           # TypeScript type definitions
 ```
 
 ## Available Scripts
@@ -79,13 +96,23 @@ src/
 - Image optimization with vite-plugin-image-optimizer
 - Tailwind CSS v4 automatic tree-shaking
 
+### AI Portfolio Assistant
+
+An intelligent chatbot powered by RAG (Retrieval-Augmented Generation) that helps visitors and recruiters learn about my experience:
+
+- **Real-time streaming** responses via Vercel AI SDK
+- **Semantic search** through Pinecone vector database
+- **Knowledge base** built from curated markdown files covering projects, skills, and background
+- **Rate limiting** via Upstash Redis to prevent abuse
+
 ## Development Status
 
 ### Planned
 
 - [ ] Component testing with Vitest
 - [ ] GitHub Actions CI/CD pipeline
-- [X] Vercel deployment with analytics
+- [x] Vercel deployment with analytics
+- [x] AI-powered portfolio assistant with RAG
 
 ## License
 
