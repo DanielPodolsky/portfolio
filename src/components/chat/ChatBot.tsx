@@ -5,11 +5,13 @@ import { ChatBubble } from "./ChatBubble"
 import { ChatPanel } from "./ChatPanel"
 import { ChatInput } from "./ChatInput"
 import { MessageList } from "./MessageList"
+import { useMediaQuery } from "@/hooks/useMediaQuery"
 
 export function ChatBot() {
   const [panelState, setPanelState] = useState<"closed" | "open" | "closing">(
     "closed"
   )
+  const isMobile = useMediaQuery("(max-width: 640px)")
   const { messages, sendMessage, status, error } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
@@ -63,6 +65,7 @@ export function ChatBot() {
             onChange={handleChange}
             onSubmit={handleSubmit}
             disabled={!input.trim() || status !== "ready"}
+            isMobile={isMobile}
           />
         </ChatPanel>
       )}
