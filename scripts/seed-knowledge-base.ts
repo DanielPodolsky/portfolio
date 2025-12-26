@@ -5,8 +5,8 @@ import { join } from "path"
 import OpenAI from "openai"
 
 const KNOWLEDGE_DIR = "./knowledge"
-const CHUNK_SIZE = 1000  // Reduced from 1500 for better granularity
-const CHUNK_OVERLAP = 200  // Reduced from 300 to match
+const CHUNK_SIZE = 1000 // Reduced from 1500 for better granularity
+const CHUNK_OVERLAP = 200 // Reduced from 300 to match
 
 // Map source files to categories for metadata filtering
 const SOURCE_CATEGORIES: Record<string, string> = {
@@ -15,6 +15,8 @@ const SOURCE_CATEGORIES: Record<string, string> = {
   "personal.md": "personal",
   "projects.md": "projects",
   "skills.md": "skills",
+  "tech-opinions.md": "technical",
+  "currently.md": "current",
 }
 
 // Extract keywords from the "Also:" lines for better retrieval
@@ -47,15 +49,34 @@ async function loadMarkdownFiles(): Promise<
 }
 
 async function chunkDocuments(
-  docs: { content: string; source: string; category: string; keywords: string[] }[]
-): Promise<{ text: string; source: string; category: string; keywords: string[]; chunkIndex: number }[]> {
+  docs: {
+    content: string
+    source: string
+    category: string
+    keywords: string[]
+  }[]
+): Promise<
+  {
+    text: string
+    source: string
+    category: string
+    keywords: string[]
+    chunkIndex: number
+  }[]
+> {
   const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: CHUNK_SIZE,
     chunkOverlap: CHUNK_OVERLAP,
     separators: ["\n---\n", "\n\n", "\n", " "], // Split on section dividers first
   })
 
-  const chunks: { text: string; source: string; category: string; keywords: string[]; chunkIndex: number }[] = []
+  const chunks: {
+    text: string
+    source: string
+    category: string
+    keywords: string[]
+    chunkIndex: number
+  }[] = []
 
   for (const doc of docs) {
     const splits = await splitter.splitText(doc.content)
@@ -74,15 +95,35 @@ async function chunkDocuments(
 }
 
 async function generateEmbeddings(
-  chunks: { text: string; source: string; category: string; keywords: string[]; chunkIndex: number }[],
+  chunks: {
+    text: string
+    source: string
+    category: string
+    keywords: string[]
+    chunkIndex: number
+  }[],
   openai: OpenAI
 ): Promise<
-  { id: string; values: number[]; metadata: { text: string; source: string; category: string; keywords: string[] } }[]
+  {
+    id: string
+    values: number[]
+    metadata: {
+      text: string
+      source: string
+      category: string
+      keywords: string[]
+    }
+  }[]
 > {
   const vectors: {
     id: string
     values: number[]
-    metadata: { text: string; source: string; category: string; keywords: string[] }
+    metadata: {
+      text: string
+      source: string
+      category: string
+      keywords: string[]
+    }
   }[] = []
 
   // Process in batches of 100 (OpenAI limit)
@@ -121,19 +162,26 @@ async function generateEmbeddings(
 async function seed() {
   console.log("╔════════════════════════════════════════════════════════════╗")
   console.log("║         KNOWLEDGE BASE SEEDING (Enhanced)                  ║")
-  console.log("╚════════════════════════════════════════════════════════════╝\n")
+  console.log(
+    "╚════════════════════════════════════════════════════════════╝\n"
+  )
 
   // Initialize clients
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! })
-  const index = pc.index(process.env.PINECONE_INDEX!)
+  const namespace = process.env.PINECONE_NAMESPACE!
+  const index = pc.index(process.env.PINECONE_INDEX!).namespace(namespace)
+
+  console.log(`📍 Target namespace: ${namespace}`)
 
   // Clear old vectors before re-seeding (if any exist)
   console.log("🗑️  Checking for existing vectors...")
   try {
     const existingStats = await index.describeIndexStats()
     if (existingStats.totalRecordCount && existingStats.totalRecordCount > 0) {
-      console.log(`   Found ${existingStats.totalRecordCount} vectors. Clearing...`)
+      console.log(
+        `   Found ${existingStats.totalRecordCount} vectors. Clearing...`
+      )
       await index.deleteAll()
       console.log("   Cleared!")
     } else {
@@ -149,7 +197,9 @@ async function seed() {
   const docs = await loadMarkdownFiles()
   console.log(`   Loaded ${docs.length} documents:`)
   docs.forEach(d => {
-    console.log(`   - ${d.source} (${d.category}) [${d.keywords.length} keywords]`)
+    console.log(
+      `   - ${d.source} (${d.category}) [${d.keywords.length} keywords]`
+    )
   })
   console.log("")
 
@@ -196,11 +246,15 @@ async function seed() {
   console.log("\n📊 Index stats:", JSON.stringify(stats, null, 2))
 
   if (stats.totalRecordCount === 0) {
-    console.log("\n⚠️  WARNING: Vectors may not be indexed yet. Wait a minute and run diagnose-rag.ts")
+    console.log(
+      "\n⚠️  WARNING: Vectors may not be indexed yet. Wait a minute and run diagnose-rag.ts"
+    )
   } else {
     console.log("\n✅ Knowledge base seeded successfully!")
   }
-  console.log("   Run 'npx tsx scripts/diagnose-rag.ts' to verify retrieval quality.")
+  console.log(
+    "   Run 'npx tsx scripts/diagnose-rag.ts' to verify retrieval quality."
+  )
 }
 
 seed().catch(console.error)

@@ -4,11 +4,11 @@
 
 ### Also: Introduce yourself, Self introduction, Who are you, What's your background, ספר לי על עצמך, מי אתה
 
-I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and Generative AI integration. I recently finished my CS degree at HIT with an 89 GPA and an innovation honor. During my studies, I won first place at HIT's hackathon and second place nationally at the AWS Public Sector Hackathon. Before that, I served as a combat soldier in the IDF - combat medic and drone operator - which taught me to stay calm under pressure and lead in high-stakes situations. I'm looking for a role where I can build impactful products and keep growing at the intersection of development and AI.
+I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and AI integration. Finished my CS degree at HIT with an 89 GPA and innovation honor. Won first at HIT's hackathon, second nationally at AWS Public Sector Hackathon. Before that - combat soldier in the IDF, combat medic and drone operator. Looking for a role building impactful products at the intersection of development and AI.
 
-### Hebrew Version
+### גרסה בעברית
 
-אני דניאל, מפתח פול-סטאק עם התמחות בReact, Node.js והתנסות עם GenAI. לאחרונה סיימתי תואר במדעי המחשב מהמרכז הטכנולוגי חולון עם ממוצע 89 ועיטור חדשנות. במהלך הלימודים זכיתי במקום ראשון בהאקתון של המכון ובמקום שני ארצי בהאקתון של AWS למגזר הציבורי. לפני הלימודים שירתתי כלוחם בצה״ל עם פקלים של חובש קרבי ומטיס רחפנים - שם למדתי לתפקד תחת לחץ ולהוביל בסיטואציות קריטיות. אני מחפש תפקיד שבו אוכל לבנות מוצרים משמעותיים ולהמשיך לצמוח בתחום הפיתוח והבינה המלאכותית.
+אני דניאל, מפתח פול-סטאק עם התמחות בריאקט, נוד, ובינה מלאכותית גנרטיבית. סיימתי תואר במדעי המחשב מהמרכז הטכנולוגי חולון עם ממוצע 89 ועיטור חדשנות. זכיתי במקום ראשון בהאקתון של המכון ובמקום שני ארצי בהאקתון של אמזון למגזר הציבורי. לפני הלימודים שירתתי כלוחם בצה״ל - חובש קרבי ומטיס רחפנים. מחפש תפקיד שבו אוכל לבנות מוצרים משמעותיים בעולם הפיתוח והבינה המלאכותית.
 
 ---
 
@@ -16,18 +16,8 @@ I'm Daniel, a Full-Stack Developer specializing in React, Node.js, and Generativ
 
 ### Also: Describe a difficult project, What's a project you're proud of, Tell me about MentorHIT, ספר לי על פרויקט מאתגר
 
-During a hackathon at my college, we were challenged to use Generative AI to improve the student experience at H.I.T.
+Hackathon challenge: use GenAI to improve student experience at HIT. We identified students lacked career guidance. I handled full-stack in a team of four - React frontend, backend API, AWS integration. Built MentorHIT: AI mentor that personalizes guidance based on personality, grades, and job market data. Won first at HIT, second nationally at AWS hackathon. College reviewing it for official integration.
 
-We identified that most students lacked career guidance - no clear path, no mentorship. I took on full-stack development responsibilities in our team of four.
+### גרסה בעברית
 
-I built core parts of both the frontend in React and the backend API. I also integrated AWS services into our architecture. We created MentorHIT - an AI-powered mentoring platform that personalizes guidance based on each student's personality, grades, and real-time job market data. Students can chat with the AI mentor and get tailored career guidance.
-
-We won first place at the H.I.T. hackathon and second place nationally at the AWS Public Sector Innovation Hackathon. The college is now reviewing our proposal to integrate MentorHIT into their official system.
-
-### Hebrew Version
-
-במהלך האקתון במכללה, האתגר היה להשתמש בבינה מלאכותית גנרטיבית כדי לשפר את חוויית הסטודנטים במרכז הטכנולוגי חולון.
-זיהינו שלרוב הסטודנטים אין הכוונה מקצועית - אין מסלול ברור, אין מנטור. לקחתי אחריות על פיתוח פול-סטאק בצוות של ארבעה.
-בניתי חלקים מרכזיים בצד הלקוח בריאקט ובצד השרת. שילבתי שירותי AWS בארכיטקטורה שלנו. יצרנו את MentorHIT - פלטפורמת מנטורינג מבוססת בינה מלאכותית שמתאימה את ההכוונה לכל סטודנט לפי אישיות, ציונים ונתוני שוק העבודה בזמן אמת. הסטודנטים יכולים לשוחח עם המנטור ולקבל עצות רלוונטיות לקריירה.
-
-זכינו במקום ראשון בהאקתון של המכון ובמקום שני ארצי בהאקתון החדשנות של AWS למגזר הציבורי. המכללה בוחנת כעת את ההצעה שלנו לשלב את MentorHIT במערכת הרשמית.
+אתגר האקתון: להשתמש בבינה מלאכותית גנרטיבית לשיפור חוויית הסטודנטים. זיהינו שחסרה הכוונה מקצועית. לקחתי אחריות על פול-סטאק בצוות של ארבעה - צד לקוח, צד שרת, ושילוב שירותי ענן של אמזון. בנינו את מנטור-היט: מנטור מבוסס בינה מלאכותית שמתאים הכוונה לפי אישיות, ציונים ושוק העבודה. מקום ראשון בהאקתון של המכון, שני ארצי בהאקתון של אמזון. המכללה בוחנת שילוב רשמי.
