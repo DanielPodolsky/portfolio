@@ -13,7 +13,7 @@ async function retrieveContext(query: string): Promise<string> {
 
   const result = await index.query({
     vector: queryEmbeddedVector.data[0].embedding,
-    topK: 5,
+    topK: 7,
     includeMetadata: true,
   })
 
@@ -21,7 +21,9 @@ async function retrieveContext(query: string): Promise<string> {
   result.matches.forEach((match, i) => {
     console.log(`\n--- Match ${i + 1} (score: ${match.score?.toFixed(4)}) ---`)
     console.log(`Source: ${match.metadata?.source}`)
-    console.log(`Text: ${(match.metadata?.text as string)?.substring(0, 200)}...`)
+    console.log(
+      `Text: ${(match.metadata?.text as string)?.substring(0, 200)}...`
+    )
   })
 
   return result.matches
