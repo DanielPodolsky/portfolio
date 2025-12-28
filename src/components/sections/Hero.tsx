@@ -216,19 +216,19 @@ function Hero({ onResumeClick }: HeroProps) {
               <source
                 type="image/avif"
                 srcSet={`${heroAvif400} 400w, ${heroAvif800} 800w, ${heroAvif1200} 1200w`}
-                sizes="(max-width: 768px) 280px, 400px"
+                sizes="(max-width: 768px) 280px, 520px"
               />
               {/* WebP - good compression, wide support */}
               <source
                 type="image/webp"
                 srcSet={`${heroWebp400} 400w, ${heroWebp800} 800w, ${heroWebp1200} 1200w`}
-                sizes="(max-width: 768px) 280px, 400px"
+                sizes="(max-width: 768px) 280px, 520px"
               />
               {/* JPG fallback */}
               <img
                 src={heroJpg800}
                 srcSet={`${heroJpg400} 400w, ${heroJpg800} 800w, ${heroJpg1200} 1200w`}
-                sizes="(max-width: 768px) 280px, 400px"
+                sizes="(max-width: 768px) 280px, 520px"
                 alt="Daniel Podolsky - Full Stack Developer"
                 width={800}
                 height={1070}
