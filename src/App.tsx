@@ -58,7 +58,7 @@ function App() {
           <ResumeModal
             isOpen={isResumeOpen}
             onClose={() => setIsResumeOpen(false)}
-            pdfUrl="/resume.pdf"
+            pdfUrl="/DanielPodolskyCV.pdf"
           />
         )}
       </Suspense>
