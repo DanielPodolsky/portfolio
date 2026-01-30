@@ -46,3 +46,4 @@ vite.svg
 # Local development files
 scripts/
 knowledge/
+.octocode/

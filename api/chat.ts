@@ -1,9 +1,9 @@
 import { streamText, UIMessage, convertToModelMessages } from "ai"
-import { openai } from "@ai-sdk/openai"
 import { Pinecone } from "@pinecone-database/pinecone"
-import OpenAI from "openai"
 import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis"
+import { anthropic } from "@ai-sdk/anthropic"
+import OpenAI from "openai"
 
 // ============================================
 // Configuration
@@ -11,7 +11,7 @@ import { Redis } from "@upstash/redis"
 const MAX_MESSAGE_LENGTH = 1000
 const MAX_MESSAGES = 20
 const SCORE_THRESHOLD = 0.25
-const TOP_K = 5
+const TOP_K = 7
 const GREETINGS = [
   "hello",
   "hi",
@@ -52,7 +52,8 @@ function getOpenAIClient(): OpenAI {
 function getPineconeIndex(): ReturnType<Pinecone["index"]> {
   if (!pineconeIndex) {
     const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! })
-    pineconeIndex = pc.index(process.env.PINECONE_INDEX!)
+    const namespace = process.env.PINECONE_NAMESPACE!
+    pineconeIndex = pc.index(process.env.PINECONE_INDEX!).namespace(namespace)
   }
   return pineconeIndex
 }
@@ -207,9 +208,9 @@ export async function POST(request: Request) {
 
     // Stream response
     const result = streamText({
-      model: openai("gpt-5-mini"),
+      model: anthropic("claude-haiku-4-5-20251001"),
       system: systemPromptTemplate.replace("{context}", context),
-      messages: convertToModelMessages(trimmedMessages as UIMessage[]),
+      messages: await convertToModelMessages(trimmedMessages as UIMessage[]),
     })
 
     return result.toUIMessageStreamResponse()
