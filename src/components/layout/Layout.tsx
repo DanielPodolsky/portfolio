@@ -9,13 +9,13 @@ export function Layout({ children }: LayoutProps) {
     <div className="relative flex flex-col min-h-screen">
       {/* Dark theme gradient - fades out in light mode */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black via-[#111111] to-[#050505] transition-opacity duration-700 dark:opacity-0"
+        className="absolute inset-0 bg-gradient-to-b from-black via-[#111111] to-[#050505] opacity-0 transition-opacity duration-700 dark:opacity-100"
         aria-hidden="true"
       />
 
       {/* Light theme gradient - fades in in light mode */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50 to-neutral-100 opacity-0 transition-opacity duration-700 dark:opacity-100"
+        className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50 to-neutral-100 transition-opacity duration-700 dark:opacity-0"
         aria-hidden="true"
       />
 

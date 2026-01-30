@@ -18,8 +18,8 @@ const transformStyles = [
 export function BlogCard({ post }: BlogCardProps) {
   return (
     <article
-      className="group flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-white/20 
-    dark:border-black/[0.08] dark:bg-black/[0.02] dark:hover:border-black/20"
+      className="group flex flex-col rounded-2xl border border-black/[0.08] bg-black/[0.02] backdrop-blur-sm p-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-black/20
+    dark:border-white/[0.08] dark:bg-white/[0.03] dark:hover:border-white/20"
     >
       {/* BounceCards - only show if images exist */}
       {post.images && post.images.length > 0 && (
@@ -73,12 +73,12 @@ export function BlogCard({ post }: BlogCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="mt-3 text-lg font-semibold tracking-tight text-neutral-100 dark:text-neutral-900">
+      <h3 className="mt-3 text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
         {post.title}
       </h3>
 
       {/* Summary */}
-      <p className="mt-2 text-sm leading-relaxed text-neutral-400 dark:text-neutral-600 line-clamp-3">
+      <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-3">
         {post.summary}
       </p>
 
@@ -90,7 +90,7 @@ export function BlogCard({ post }: BlogCardProps) {
             {post.tags.map(tag => (
               <span
                 key={tag}
-                className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[10px] font-medium text-neutral-400 dark:bg-black/[0.04] dark:text-neutral-500"
+                className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-neutral-500 dark:bg-white/[0.06] dark:text-neutral-400"
               >
                 {tag}
               </span>
@@ -103,7 +103,7 @@ export function BlogCard({ post }: BlogCardProps) {
           href={post.linkedInUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-[11px] font-medium text-neutral-300 hover:text-white dark:text-neutral-600 dark:hover:text-neutral-900 transition-colors shrink-0"
+          className="inline-flex items-center text-[11px] font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors shrink-0"
         >
           Read on LinkedIn
           <ExternalLink className="ml-1.5 h-3 w-3" />

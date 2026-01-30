@@ -36,10 +36,10 @@ function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative z-10 w-full max-w-4xl mx-4 h-[90vh] flex flex-col rounded-2xl border border-neutral-800 dark:border-neutral-200 bg-neutral-950 dark:bg-white shadow-2xl">
+      <div className="relative z-10 w-full max-w-4xl mx-4 h-[90vh] flex flex-col rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800 dark:border-neutral-200">
-          <h2 className="text-sm font-semibold text-neutral-100 dark:text-neutral-900">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200 dark:border-neutral-800">
+          <h2 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
             Resume
           </h2>
           <div className="flex items-center gap-2">
@@ -48,8 +48,8 @@ function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-neutral-700 dark:border-neutral-300 px-3 py-1.5 text-[11px] font-medium text-neutral-200 dark:text-neutral-700 transition-colors 
-  hover:border-neutral-500 hover:text-white dark:hover:text-neutral-900"
+              className="inline-flex items-center rounded-full border border-neutral-300 dark:border-neutral-700 px-3 py-1.5 text-[11px] font-medium text-neutral-700 dark:text-neutral-200 transition-colors
+  hover:border-neutral-500 hover:text-neutral-900 dark:hover:text-white"
             >
               <ExternalLink className="mr-1.5 h-3 w-3" />
               Open
@@ -58,8 +58,8 @@ function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
             <a
               href={pdfUrl}
               download="DanielPodolskyCV.pdf"
-              className="inline-flex items-center rounded-full bg-neutral-100 dark:bg-neutral-900 px-3 py-1.5 text-[11px] font-medium text-black dark:text-white transition-colors hover:bg-white 
-  dark:hover:bg-neutral-800"
+              className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-3 py-1.5 text-[11px] font-medium text-white dark:text-black transition-colors hover:bg-neutral-800
+  dark:hover:bg-white"
             >
               <Download className="mr-1.5 h-3 w-3" />
               Download
@@ -67,7 +67,7 @@ function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
             {/* Close */}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full text-neutral-400 hover:text-white dark:hover:text-neutral-900 transition-colors"
+              className="p-1.5 rounded-full text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
               aria-label="Close modal"
             >
               <X className="h-5 w-5" />
@@ -79,7 +79,7 @@ function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
         <div className="flex-1 p-4">
           <iframe
             src={pdfUrl}
-            className="w-full h-full rounded-lg border border-neutral-800 dark:border-neutral-200"
+            className="w-full h-full rounded-lg border border-neutral-200 dark:border-neutral-800"
             title="Resume PDF"
           />
         </div>
