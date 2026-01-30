@@ -199,11 +199,11 @@ function Hero({ onResumeClick }: HeroProps) {
           className="order-2 md:order-none overflow-hidden rounded-3xl border border-neutral-800 dark:border-neutral-200/60 bg-neutral-950/70 dark:bg-white/80 shadow-[0_18px_45px_rgba(0,0,0,0.85)] 
   dark:shadow-[0_18px_45px_rgba(0,0,0,0.12)] transition-colors duration-500"
         >
-          <div className="relative aspect-square">
+          <div className="relative h-full min-h-[280px] md:aspect-square md:h-auto">
             <img
               src={profilePic}
               alt="Daniel Podolsky profile picture"
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
             />
             {/* Dark overlay for blending */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 dark:from-white/20 via-transparent to-transparent transition-colors duration-500" />
