@@ -23,17 +23,38 @@ export function BlogCard({ post }: BlogCardProps) {
     >
       {/* BounceCards - only show if images exist */}
       {post.images && post.images.length > 0 && (
-        <div className="mb-4 flex justify-center">
-          <BounceCards
-            images={post.images}
-            containerWidth={500}
-            containerHeight={250}
-            animationDelay={0.5}
-            animationStagger={0.08}
-            easeType="elastic.out(1, 0.5)"
-            transformStyles={transformStyles}
-            enableHover={false}
-          />
+        <div className="mb-4 flex justify-center overflow-hidden">
+          <div className="hidden md:block">
+            <BounceCards
+              images={post.images}
+              containerWidth={500}
+              containerHeight={250}
+              animationDelay={0.5}
+              animationStagger={0.08}
+              easeType="elastic.out(1, 0.5)"
+              transformStyles={transformStyles}
+              enableHover={false}
+            />
+          </div>
+          <div className="md:hidden">
+            <BounceCards
+              images={post.images}
+              containerWidth={320}
+              containerHeight={160}
+              cardSize={140}
+              animationDelay={0.5}
+              animationStagger={0.08}
+              easeType="elastic.out(1, 0.5)"
+              transformStyles={[
+                "rotate(5deg) translate(-100px)",
+                "rotate(0deg) translate(-50px)",
+                "rotate(-5deg)",
+                "rotate(5deg) translate(50px)",
+                "rotate(-5deg) translate(100px)",
+              ]}
+              enableHover={false}
+            />
+          </div>
         </div>
       )}
 
