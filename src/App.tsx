@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout/Layout"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import Hero from "@/components/sections/Hero"
+import { ChatBot } from "@/components/chat/ChatBot"
 
 // Lazy load sections below the fold
 const Projects = lazy(() => import("@/components/sections/Projects"))
@@ -61,6 +62,8 @@ function App() {
           />
         )}
       </Suspense>
+
+      <ChatBot />
     </Layout>
   )
 }

@@ -1,7 +1,6 @@
 import { Mail, FileText, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/contexts/ThemeContext.tsx"
-import LogoDark from "@/assets/images/LogoDark.jpg"
-import LogoLight from "@/assets/images/LogoLight.jpg"
+import PixelAvatar from "@/assets/images/PixelAvatar.webp"
 
 interface HeaderProps {
   onResumeClick: () => void
@@ -14,14 +13,11 @@ export function Header({ onResumeClick }: HeaderProps) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         {/* Left Section - Logo + Name */}
         <a href="#top" className="flex items-center space-x-2 group">
-          <div
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-300/70 dark:border-neutral-700/70 group-hover:border-neutral-600/80 
-  dark:group-hover:border-neutral-400/80 transition-colors"
-          >
+          <div className="h-8 w-8 overflow-hidden rounded-lg border border-neutral-300/70 dark:border-neutral-700/70 group-hover:border-neutral-600/80 dark:group-hover:border-neutral-400/80 transition-colors">
             <img
-              src={theme === "dark" ? LogoLight : LogoDark}
-              alt="Daniel Podolsky logo"
-              className="object-cover rounded-full"
+              src={PixelAvatar}
+              alt="Daniel Podolsky"
+              className="h-full w-full object-cover"
             />
           </div>
           <div className="font-heading hidden text-left md:block">
