@@ -17,7 +17,7 @@ import SpotlightCard from "@/components/ui/SpotlightCard"
 
 export function Hero() {
   return (
-    <section className="flex flex-col gap-8 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)]">
+    <section className="border-b border-neutral-800/80 dark:border-neutral-200/80 pb-12 md:pb-16 flex flex-col gap-8 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)]">
       {/* Left Column */}
       <div className="flex flex-col space-y-6">
         {/* Status */}
@@ -85,7 +85,7 @@ export function Hero() {
 
           {/* GitHub Button */}
           <a
-            href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
+            href="https://github.com/DanielPodolsky"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-neutral-700/80 dark:border-neutral-300/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-200 dark:text-neutral-700 
@@ -97,7 +97,7 @@ export function Hero() {
 
           {/* LinkedIn Button */}
           <a
-            href="https://github.com/DanielPodolsky"
+            href="https://www.linkedin.com/in/daniel-podolsky-341901242/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-neutral-700/80 dark:border-neutral-300/80 bg-transparent px-3.5 py-1.5 text-xs font-medium tracking-tight text-neutral-200 dark:text-neutral-700 

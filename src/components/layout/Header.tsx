@@ -1,5 +1,7 @@
 import { Mail, FileText, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/contexts/ThemeContext.tsx"
+import LogoDark from "@/assets/images/LogoDark.jpg"
+import LogoLight from "@/assets/images/LogoLight.jpg"
 
 export function Header() {
   const { theme, toggleTheme } = useTheme()
@@ -12,9 +14,11 @@ export function Header() {
             className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 dark:bg-neutral-100 border border-neutral-700/70 dark:border-neutral-300/70 group-hover:border-neutral-400/80 
   dark:group-hover:border-neutral-600/80 transition-colors"
           >
-            <span className="text-sm font-semibold tracking-tight text-neutral-100 dark:text-neutral-900">
-              D
-            </span>
+            <img
+              src={theme === "dark" ? LogoLight : LogoDark}
+              alt="Daniel Podolsky logo"
+              className="object-cover rounded-full"
+            />
           </div>
           <div className="hidden text-left md:block">
             <div className="text-xs font-medium uppercase tracking-[0.22em] text-neutral-400 dark:text-neutral-600">
