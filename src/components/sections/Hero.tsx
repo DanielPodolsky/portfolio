@@ -13,8 +13,17 @@ import {
   Linkedin,
 } from "lucide-react"
 import ShinyText from "@/components/ui/ShinyText"
-import profilePic from "@/assets/images/ProfilePicture.webp"
 import SpotlightCard from "@/components/ui/SpotlightCard"
+
+const heroAvif400 = "/images/hero/hero-400.avif"
+const heroAvif800 = "/images/hero/hero-800.avif"
+const heroAvif1200 = "/images/hero/hero-1200.avif"
+const heroWebp400 = "/images/hero/hero-400.webp"
+const heroWebp800 = "/images/hero/hero-800.webp"
+const heroWebp1200 = "/images/hero/hero-1200.webp"
+const heroJpg400 = "/images/hero/hero-400.jpg"
+const heroJpg800 = "/images/hero/hero-800.jpg"
+const heroJpg1200 = "/images/hero/hero-1200.jpg"
 
 interface HeroProps {
   onResumeClick: () => void
@@ -202,11 +211,33 @@ function Hero({ onResumeClick }: HeroProps) {
   dark:shadow-[0_18px_45px_rgba(0,0,0,0.85)] transition-colors duration-500"
         >
           <div className="relative h-full min-h-[280px] md:aspect-square md:h-auto">
-            <img
-              src={profilePic}
-              alt="Daniel Podolsky profile picture"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
-            />
+            <picture>
+              {/* AVIF - best compression, modern browsers */}
+              <source
+                type="image/avif"
+                srcSet={`${heroAvif400} 400w, ${heroAvif800} 800w, ${heroAvif1200} 1200w`}
+                sizes="(max-width: 768px) 280px, 400px"
+              />
+              {/* WebP - good compression, wide support */}
+              <source
+                type="image/webp"
+                srcSet={`${heroWebp400} 400w, ${heroWebp800} 800w, ${heroWebp1200} 1200w`}
+                sizes="(max-width: 768px) 280px, 400px"
+              />
+              {/* JPG fallback */}
+              <img
+                src={heroJpg800}
+                srcSet={`${heroJpg400} 400w, ${heroJpg800} 800w, ${heroJpg1200} 1200w`}
+                sizes="(max-width: 768px) 280px, 400px"
+                alt="Daniel Podolsky - Full Stack Developer"
+                width={800}
+                height={1070}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
+              />
+            </picture>
             {/* Dark overlay for blending */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/20 dark:from-black/40 via-transparent to-transparent transition-colors duration-500" />
           </div>
