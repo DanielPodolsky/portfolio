@@ -27,7 +27,7 @@ function getAchievementIcon(achievement: string) {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <SpotlightCard className="flex flex-col p-5 transition-transform duration-150 hover:-translate-y-[2px]">
+    <SpotlightCard className="h-full flex flex-col p-5 transition-transform duration-150 hover:-translate-y-[2px]">
       {/* Top row: Achievement + Type */}
       <div className="flex items-center justify-between">
         {/* Achievement badges */}
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.achievements.map(achievement => (
               <span
                 key={achievement}
-                className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-medium ${getAchievementStyle(achievement)}`}
+                className={`font-heading inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-medium ${getAchievementStyle(achievement)}`}
               >
                 {getAchievementIcon(achievement)}
                 {achievement}
@@ -68,7 +68,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="mt-4 flex flex-col gap-3 text-justify hyphens-auto">
           {project.problem && (
             <div className="rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 via-red-600/5 to-transparent p-3">
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-red-500 dark:text-red-400">
+              <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-red-500 dark:text-red-400">
                 Problem
               </p>
               <p className="mt-1 text-[13px] text-neutral-700 dark:text-neutral-200">
@@ -78,7 +78,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
           {project.solution && (
             <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-emerald-600/5 to-transparent p-3">
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-emerald-500 dark:text-emerald-400">
+              <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-emerald-500 dark:text-emerald-400">
                 Solution
               </p>
               <p className="mt-1 text-[13px] text-neutral-700 dark:text-neutral-200">
@@ -88,7 +88,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
           {project.impact && (
             <div className="rounded-2xl border border-sky-500/20 bg-gradient-to-br from-sky-500/10 via-sky-600/5 to-transparent p-3">
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-sky-500 dark:text-sky-400">
+              <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-sky-500 dark:text-sky-400">
                 Impact
               </p>
               <p className="mt-1 text-[13px] text-neutral-700 dark:text-neutral-200">
@@ -120,7 +120,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-[11px] font-medium text-neutral-700 dark:text-neutral-200 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline"
+              className="font-heading inline-flex items-center text-[11px] font-medium text-neutral-700 dark:text-neutral-200 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline"
             >
               <Github className="mr-1.5 h-3.5 w-3.5" />
               View code
@@ -131,7 +131,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-[11px] font-medium text-neutral-700 dark:text-neutral-200 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline"
+              className="font-heading inline-flex items-center text-[11px] font-medium text-neutral-700 dark:text-neutral-200 underline-offset-4 hover:text-neutral-900 dark:hover:text-white hover:underline"
             >
               <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
               Live

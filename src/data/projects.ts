@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: "llm-powered-log-analyzer",
     title: "LLM-Powered Log Analyzer",
     description:
-      "Intelligent system that automates anomaly detection and root-cause classification using LLMs, reducing incident response times.",
+      "Intelligent system that automates anomaly detection and root-cause classification using LLMs.",
     techStack: ["React/Vite", "Python", "Docker", "LLMs"],
     githubUrl: "https://github.com/DanielPodolsky/LLM-Powered-Log-Analyzer",
     liveUrl: "https://www.youtube.com/watch?v=n0CQCidOSUM",

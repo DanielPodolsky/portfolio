@@ -18,7 +18,7 @@ function Skills() {
     >
       {/* Section header */}
       <div ref={headerRef as React.RefObject<HTMLDivElement>} className="mb-8">
-        <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
+        <h2 className="tracking-wide text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
           Technical Skills
         </h2>
         <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">

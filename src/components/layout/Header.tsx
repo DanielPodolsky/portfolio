@@ -24,18 +24,18 @@ export function Header({ onResumeClick }: HeaderProps) {
               className="object-cover rounded-full"
             />
           </div>
-          <div className="hidden text-left md:block">
+          <div className="font-heading hidden text-left md:block">
             <div className="text-xs font-medium uppercase tracking-[0.22em] text-neutral-600 dark:text-neutral-400">
               Software Engineer
             </div>
-            <div className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+            <div className="font-heading text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
               Daniel Podolsky
             </div>
           </div>
         </a>
 
         {/* Middle Section - Desktop Nav Links */}
-        <nav className="hidden items-center space-x-8 text-sm text-neutral-700 dark:text-neutral-300 md:flex">
+        <nav className="font-heading hidden items-center space-x-8 text-sm text-neutral-700 dark:text-neutral-300 md:flex">
           <a
             href="#about"
             className="transition-colors hover:text-neutral-900 dark:hover:text-white"
@@ -66,7 +66,7 @@ export function Header({ onResumeClick }: HeaderProps) {
         <div className="flex items-center space-x-3">
           <a
             href="#contact"
-            className="hidden rounded-full border border-neutral-300/80 dark:border-neutral-700/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200 shadow-sm transition-all 
+            className="font-heading hidden rounded-full border border-neutral-300/80 dark:border-neutral-700/80 px-3 py-1.5 text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-200 shadow-sm transition-all 
   hover:border-neutral-500 dark:hover:border-neutral-300 hover:-translate-y-[1px] hover:text-neutral-900 dark:hover:text-white hover:shadow-lg/50 md:inline-flex"
           >
             <Mail className="mr-1.5 mt-0.5 h-[14px] w-[14px]" />
@@ -87,7 +87,7 @@ export function Header({ onResumeClick }: HeaderProps) {
           </button>
           <button
             onClick={onResumeClick}
-            className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-3.5 py-1.5 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+            className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-3.5 py-1.5 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
           >
             <FileText className="mr-1.5 h-[14px] w-[14px]" />

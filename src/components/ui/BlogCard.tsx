@@ -97,7 +97,7 @@ export function BlogCard({ post }: BlogCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="mt-3 text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+      <h3 className="mt-3 tracking-wide text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
         {post.title}
       </h3>
 
