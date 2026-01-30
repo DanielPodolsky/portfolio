@@ -31,7 +31,27 @@ import hebrew4 from "@/assets/blogs/claude-hebrew-chrome-extension/1-4.png"
 import hebrew5 from "@/assets/blogs/claude-hebrew-chrome-extension/1-5.png"
 import hebrew6 from "@/assets/blogs/claude-hebrew-chrome-extension/1-6.png"
 
+// Claude Opus 4.5 images
+import opus1 from "@/assets/blogs/opus-45-update/1764043449337.jpeg"
+import opus2 from "@/assets/blogs/opus-45-update/1764043449364.jpeg"
+import opus3 from "@/assets/blogs/opus-45-update/1764043449382.jpeg"
+import opus4 from "@/assets/blogs/opus-45-update/1764043449519.jpeg"
+import opus5 from "@/assets/blogs/opus-45-update/1764043452900.jpeg"
+
 export const blogPosts: BlogPost[] = [
+  {
+    id: "opus-45-update",
+    title:
+      "Claude Opus 4.5's 'Effort' Parameter: 76% Fewer Tokens, Same Performance as Sonnet 4.5",
+    summary:
+      "Before you build your next AI agent, you need to see what Claude Opus 4.5 just unlocked. Anthropic's latest release brings features that fundamentally change how we handle cost, context, and performance in agentic workflows—and most developers don't know about them yet.",
+    date: "Nov 2025",
+    readTime: "Short read",
+    linkedInUrl:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7398963653431001088/?originTrackingId=GID2YSybSBf%2FbnrRwrIZJQ%3D%3D",
+    tags: ["Claude", "LLM", "Agentic AI", "Cost Optimization"],
+    images: [opus1, opus2, opus3, opus4, opus5],
+  },
   {
     id: "kiro-ide-prompt-engineering",
     title: "Spec-Driven Development with Amazon Kiro IDE",

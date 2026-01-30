@@ -7,7 +7,7 @@ interface BlogCardProps {
 }
 
 // Transform styles for the bouncing cards
-const transformStyles = [
+const transformStyles5 = [
   "rotate(5deg) translate(-150px)",
   "rotate(0deg) translate(-70px)",
   "rotate(-5deg)",
@@ -15,11 +15,46 @@ const transformStyles = [
   "rotate(-5deg) translate(150px)",
 ]
 
+// Transform styles for 6 images (rebalanced to center)
+const transformStyles6 = [
+  "rotate(5deg) translate(-180px)",
+  "rotate(0deg) translate(-108px)",
+  "rotate(-5deg) translate(-36px)",
+  "rotate(5deg) translate(36px)",
+  "rotate(0deg) translate(108px)",
+  "rotate(-5deg) translate(180px)",
+]
+
+const mobileTransforms5 = [
+  "rotate(5deg) translate(-100px)",
+  "rotate(0deg) translate(-50px)",
+  "rotate(-5deg)",
+  "rotate(5deg) translate(50px)",
+  "rotate(-5deg) translate(100px)",
+]
+
+const mobileTransforms6 = [
+  "rotate(5deg) translate(-120px)",
+  "rotate(0deg) translate(-72px)",
+  "rotate(-5deg) translate(-24px)",
+  "rotate(5deg) translate(24px)",
+  "rotate(0deg) translate(72px)",
+  "rotate(-5deg) translate(120px)",
+]
+
 export function BlogCard({ post }: BlogCardProps) {
+  const imageCount = post.images?.length || 0
+  const desktopCardSize = imageCount > 5 ? 160 : 200
+  const mobileCardSize = imageCount > 5 ? 110 : 140
+
+  const desktopTransforms = imageCount > 5 ? transformStyles6 : transformStyles5
+  const mobileTransforms =
+    imageCount > 5 ? mobileTransforms6 : mobileTransforms5
+
   return (
     <article
       className="group flex flex-col rounded-2xl border border-black/[0.08] bg-black/[0.02] backdrop-blur-sm p-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-black/20
-    dark:border-white/[0.08] dark:bg-white/[0.03] dark:hover:border-white/20"
+    dark:border-white/[0.08] dark:bg-white/[0.03] dark:hover:border-white/20 h-full"
     >
       {/* BounceCards - only show if images exist */}
       {post.images && post.images.length > 0 && (
@@ -29,11 +64,9 @@ export function BlogCard({ post }: BlogCardProps) {
               images={post.images}
               containerWidth={500}
               containerHeight={250}
-              animationDelay={0.5}
-              animationStagger={0.08}
-              easeType="elastic.out(1, 0.5)"
-              transformStyles={transformStyles}
-              enableHover={false}
+              cardSize={desktopCardSize}
+              transformStyles={desktopTransforms}
+              enableHover={true}
             />
           </div>
           <div className="md:hidden">
@@ -41,18 +74,9 @@ export function BlogCard({ post }: BlogCardProps) {
               images={post.images}
               containerWidth={320}
               containerHeight={160}
-              cardSize={140}
-              animationDelay={0.5}
-              animationStagger={0.08}
-              easeType="elastic.out(1, 0.5)"
-              transformStyles={[
-                "rotate(5deg) translate(-100px)",
-                "rotate(0deg) translate(-50px)",
-                "rotate(-5deg)",
-                "rotate(5deg) translate(50px)",
-                "rotate(-5deg) translate(100px)",
-              ]}
-              enableHover={false}
+              cardSize={mobileCardSize}
+              transformStyles={mobileTransforms}
+              enableHover={true}
             />
           </div>
         </div>
