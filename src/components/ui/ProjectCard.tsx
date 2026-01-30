@@ -106,7 +106,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.techStack.map(tech => (
             <span
               key={tech}
-              className="rounded-full border border-neutral-500/20 dark:border-neutral-300/40 bg-white/5 dark:bg-white/60 backdrop-blur-sm text-neutral-300 dark:text-neutral-800 px-2.5 py-1"
+              className="rounded-full border border-white/10 dark:border-black/10 bg-white/10 dark:bg-black/10 backdrop-blur-md text-neutral-200 dark:text-neutral-700 px-2.5 py-1 shadow-sm"
             >
               {tech}
             </span>
@@ -134,7 +134,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className="inline-flex items-center text-[11px] font-medium text-neutral-200 dark:text-neutral-700 underline-offset-4 hover:text-white dark:hover:text-neutral-900 hover:underline"
             >
               <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-              Live demo
+              Live
             </a>
           )}
         </div>
