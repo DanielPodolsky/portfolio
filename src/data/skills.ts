@@ -12,6 +12,8 @@ import {
   SiOpenai,
   SiDocker,
   SiGithubactions,
+  SiAnthropic,
+  SiHuggingface,
 } from "react-icons/si"
 import {
   Brain,
@@ -24,6 +26,8 @@ import {
   Workflow,
   MessageSquare,
   Cloud,
+  Terminal,
+  Code2,
 } from "lucide-react"
 import { type LucideIcon } from "lucide-react"
 
@@ -55,9 +59,13 @@ export const skills: Skill[] = [
 
   // Development Practices
   { name: "RESTful APIs", icon: Workflow, category: "practices" },
-  { name: "System Design", icon: Settings2, category: "practices" },
   { name: "Git & GitHub", icon: GitBranch, category: "practices" },
   { name: "Agile/Scrum", icon: Users, category: "practices" },
+  { name: "Claude", icon: SiAnthropic, category: "practices" },
+  { name: "Claude Code", icon: Terminal, category: "practices" },
+  { name: "OpenAI", icon: SiOpenai, category: "practices" },
+  { name: "Kiro IDE", icon: Code2, category: "practices" },
+  { name: "Hugging Face", icon: SiHuggingface, category: "practices" },
 
   // Currently Expanding
   { name: "Next.js", icon: Rocket, category: "expanding" },
