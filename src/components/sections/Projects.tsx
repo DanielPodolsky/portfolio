@@ -21,7 +21,7 @@ function Projects() {
       {/* Section header */}
       <div
         ref={headerRef as React.RefObject<HTMLDivElement>}
-        className="flex items-center justify-between"
+        className="opacity-0 flex items-center justify-between"
       >
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
@@ -49,6 +49,7 @@ function Projects() {
           <div
             key={project.id}
             ref={projectRefs[index] as React.RefObject<HTMLDivElement>}
+            className="opacity-0"
           >
             <ProjectCard project={project} />
           </div>
