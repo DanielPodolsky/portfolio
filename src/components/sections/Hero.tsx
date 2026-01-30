@@ -6,7 +6,6 @@ import {
   Eye,
   FileText,
   Github,
-  Mail,
   Award,
   Trophy,
   Linkedin,

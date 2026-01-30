@@ -15,8 +15,7 @@ export function Blog() {
             Writing & Insights
           </h2>
           <p className="mt-2 text-sm text-neutral-400 dark:text-neutral-500">
-            Technical deep-dives, tutorials, and lessons learned from building
-            AI-powered systems.
+            I like to write about software engineering, come check it out.
           </p>
         </div>
         <a

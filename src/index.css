@@ -122,3 +122,12 @@
     scroll-padding-top: 5rem; /* Offset for fixed header */
   }
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
