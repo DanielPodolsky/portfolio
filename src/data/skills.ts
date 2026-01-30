@@ -20,7 +20,6 @@ import {
   Search,
   Cpu,
   GitBranch,
-  Settings2,
   Users,
   Rocket,
   Workflow,
