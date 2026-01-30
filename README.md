@@ -58,7 +58,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/portfolio-site.git
+git clone https://github.com/DanielPodolsky/portfolio-site.git
 
 # Navigate to project
 cd portfolio-site
@@ -69,7 +69,7 @@ npm install
 # Start development server
 npm run dev
 
-Available Scripts
+### Available Scripts
 
 npm run dev          # Start dev server (http://localhost:5173)
 npm run build        # Build for production
@@ -78,24 +78,24 @@ npm run lint         # Run ESLint
 npm run format       # Format with Prettier
 npm run format:check # Check formatting
 
-🏗️ Development Phases
+### 🏗️ Development Phases
 
-- Phase 0: Project setup and architecture
-- Phase 1: Core layout and navigation
-- Phase 2: Hero and About sections
-- Phase 3: Projects showcase
-- Phase 4: Skills and experience
-- Phase 5: Contact form
-- Phase 6: Performance optimization
-- Phase 7: Testing and quality
-- Phase 8: Deployment and CI/CD
-- Phase 9: Polish and launch
+[x]- Phase 0: Project setup and architecture
+[] - Phase 1: Core layout and navigation
+[] - Phase 2: Hero and About sections
+[] - Phase 3: Projects showcase
+[] - Phase 4: Skills and experience
+[] - Phase 5: Contact form
+[] - Phase 6: Performance optimization
+[] - Phase 7: Testing and quality
+[] - Phase 8: Deployment and CI/CD
+[] - Phase 9: Polish and launch
 
-📝 License
+### 📝 License
 
 This project is open source and available under the LICENSE.
 
-🤝 Connect
+### 🤝 Connect
 
 - Portfolio: [Coming Soon]
 - LinkedIn: https://www.linkedin.com/in/daniel-podolsky-341901242/
