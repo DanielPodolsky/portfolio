@@ -1,62 +1,53 @@
+<a id="top"></a>
+
 # Daniel Podolsky Portfolio
 
-A performant portfolio website built with React 19 and TypeScript, featuring premium UI interactions and theme-aware design.
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![GitHub last commit](https://img.shields.io/github/last-commit/DanielPodolsky/portfolio)
+![Lighthouse](https://img.shields.io/badge/Lighthouse-100-brightgreen?logo=lighthouse)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
 
-**Live Demo**: [danielpodolsky.dev](https://danielpodolsky.dev)
-**Repository**: [github.com/DanielPodolsky/portfolio](https://github.com/DanielPodolsky/portfolio)
+A performant portfolio website built with React 19 and TypeScript, featuring an AI-powered assistant, premium UI interactions, and theme-aware design.
 
-### Built With
+**Live**: [danielpodolsky.dev](https://danielpodolsky.dev)
+
+<!-- TODO: Add hero screenshot or GIF demo here -->
+<div align="center">
+    <img width="2563" height="1318" alt="image" src="https://github.com/user-attachments/assets/efb61877-7a9f-4300-acfd-4edec90bd6f1" />
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#available-scripts">Available Scripts</a></li>
+    <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#development-status">Development Status</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+## Built With
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?logo=tailwindcss&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5--mini-412991?logo=openai&logoColor=white)
+![Anthropic](https://img.shields.io/badge/Anthropic-Claude_Haiku_4.5-D4A27F?logo=anthropic&logoColor=white)
 ![Pinecone](https://img.shields.io/badge/Pinecone-Vector_DB-000000?logo=pinecone&logoColor=white)
-![Vercel AI SDK](https://img.shields.io/badge/Vercel_AI_SDK-5.0-000000?logo=vercel&logoColor=white)
+![Vercel AI SDK](https://img.shields.io/badge/Vercel_AI_SDK-6.0-000000?logo=vercel&logoColor=white)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Overview
 
 This portfolio showcases my transition from Combat Medic to Software Engineer through interactive project cards, technical blog posts, and a skills showcase. The site prioritizes performance, accessibility, and modern development patterns that reflect production-grade engineering practices.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18 or higher
-
-### Installation
-
-```bash
-git clone https://github.com/DanielPodolsky/portfolio.git
-cd portfolio
-
-npm install
-npm run dev
-```
-
-The development server starts at `http://localhost:5173`.
-
-### Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-# Contact Form (EmailJS)
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-
-# AI Chatbot (RAG)
-OPENAI_API_KEY=your_openai_key
-PINECONE_API_KEY=your_pinecone_key
-PINECONE_INDEX=your_index_name
-CHATBOT_SYSTEM_PROMPT=your_system_prompt
-
-# Rate Limiting
-UPSTASH_REDIS_REST_URL=your_upstash_url
-UPSTASH_REDIS_REST_TOKEN=your_upstash_token
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Structure
 
@@ -72,10 +63,12 @@ UPSTASH_REDIS_REST_TOKEN=your_upstash_token
     │   └── ui/          # Reusable UI components (ProjectCard, BlogCard, SpotlightCard)
     ├── contexts/        # React Context providers (ThemeContext)
     ├── data/            # Static data (projects, skills, blog posts)
-    ├── hooks/           # Custom React hooks (planned)
+    ├── hooks/           # Custom React hooks
     ├── lib/             # Utility functions (cn helper)
     └── types/           # TypeScript type definitions
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Available Scripts
 
@@ -88,22 +81,28 @@ UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 | `npm run format`       | Format code with Prettier           |
 | `npm run format:check` | Check formatting without writing    |
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Key Features
 
-### Performance Considerations
+### Performance
 
 - Code splitting via React.lazy and Suspense
 - Image optimization with vite-plugin-image-optimizer
 - Tailwind CSS v4 automatic tree-shaking
+- Lighthouse score: 100
 
 ### AI Portfolio Assistant
 
 An intelligent chatbot powered by RAG (Retrieval-Augmented Generation) that helps visitors and recruiters learn about my experience:
 
-- **Real-time streaming** responses via Vercel AI SDK
+- **Real-time streaming** responses via Vercel AI SDK v6
+- **Claude Haiku 4.5** for fast, accurate responses with strong instruction-following
 - **Semantic search** through Pinecone vector database
 - **Knowledge base** built from curated markdown files covering projects, skills, and background
 - **Rate limiting** via Upstash Redis to prevent abuse
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Development Status
 
@@ -111,15 +110,39 @@ An intelligent chatbot powered by RAG (Retrieval-Augmented Generation) that help
 
 - [ ] Component testing with Vitest
 - [ ] GitHub Actions CI/CD pipeline
+- [ ] Hero section screenshot/GIF for README
+
+### Completed
+
 - [x] Vercel deployment with analytics
 - [x] AI-powered portfolio assistant with RAG
+- [x] Claude Haiku 4.5 integration with prompt hardening
+- [x] Mobile UX optimization (keyboard behavior)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## License
 
 MIT
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
 
 - **LinkedIn**: [daniel-podolsky-341901242](https://www.linkedin.com/in/daniel-podolsky-341901242/)
 - **GitHub**: [DanielPodolsky](https://github.com/DanielPodolsky)
 - **Email**: lambodol76@gmail.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Acknowledgments
+
+- [Vercel AI SDK](https://sdk.vercel.ai/) - Streaming AI responses
+- [Anthropic Claude](https://anthropic.com/) - AI model powering the chatbot
+- [Pinecone](https://pinecone.io/) - Vector database for semantic search
+- [shadcn/ui](https://ui.shadcn.com/) - UI component library
+- [GSAP](https://gsap.com/) - Premium animations
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
+- [Upstash](https://upstash.com/) - Serverless Redis for rate limiting
+
+<p align="right">(<a href="#top">back to top</a>)</p>
