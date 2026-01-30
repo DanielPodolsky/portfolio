@@ -33,63 +33,63 @@ import hebrew6 from "@/assets/blogs/claude-hebrew-chrome-extension/1-6.png"
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "mentorhit-aws-hackathon",
-    title: "Building MentorHIT: From Campus Hackathon to AWS National Finals",
-    summary:
-      "How we built an AI-powered academic mentoring platform using Amazon Bedrock and RAG architecture, and won 2nd place at the AWS Public Sector Innovation Hackathon representing Holon Institute of Technology.",
-    date: "Nov 2024",
-    readTime: "7 min read",
-    linkedInUrl:
-      "https://www.linkedin.com/posts/daniel-podolsky-341901242_genai-fullstack-aws-activity-7372864220683497472-GO-N?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
-    tags: ["AWS", "Hackathon", "GenAI", "Architecture", "RAG"],
-    images: [mentorhit1, mentorhit2, mentorhit3, mentorhit4, mentorhit5],
-  },
-  {
     id: "kiro-ide-prompt-engineering",
-    title: "Practical Prompt Engineering with Amazon Kiro IDE",
+    title: "Spec-Driven Development with Amazon Kiro IDE",
     summary:
-      "A deep dive into Amazon's Kiro IDE and spec-driven development. Learn how to use Agent Steering files, Hooks, and MCP integrations to write consistent, high-quality code through effective prompt engineering.",
+      "Amazon's new IDE turns your prompts into structured specs before writing a single line of code. Here's how I use it, plus a repo of ready-made prompt templates.",
     date: "Nov 2025",
-    readTime: "8 min read",
+    readTime: "Short read",
     linkedInUrl:
       "https://www.linkedin.com/posts/daniel-podolsky-341901242_promptengineering-softwarearchitecture-ai-activity-7389549150222041088-x8K3?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
-    tags: ["Prompt Engineering", "Kiro IDE", "AI", "Best Practices"],
+    tags: ["Prompt Engineering", "Kiro IDE", "AI", "Architecture"],
     images: [kiro1],
   },
   {
-    id: "claude-code-best-practices",
-    title: "Essential Tips for Getting Started with Claude Code",
-    summary:
-      "A practical guide to maximizing Claude Code effectiveness, featuring cc-sessions workflow, context management strategies, and GitHub integration tips. Co-authored with Gil Yona.",
-    date: "Nov 2024",
-    readTime: "5 min read",
-    linkedInUrl:
-      "https://www.linkedin.com/posts/daniel-podolsky-341901242_claude-code-quick-setup-with-cc-sessions-activity-7369602713279533059-hO-8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
-    tags: ["Claude Code", "AI", "Development Workflow", "Productivity"],
-    images: [claudeCode1, claudeCode2, claudeCode3, claudeCode4, claudeCode5],
-  },
-  {
     id: "udemy-schedule-gpt-bot",
-    title: "Building a GPT Bot to Auto-Schedule Your Learning Path",
+    title: "A GPT Bot for Structured Learning Schedules",
     summary:
-      "Created a custom GPT bot that transforms Udemy courses into structured Google Calendar schedules, solving the problem of inconsistent learning habits through systematic time management.",
-    date: "Nov 2024",
-    readTime: "4 min read",
+      "Tired of opening courses randomly and losing consistency? I built a GPT bot that turns any course into a Google Calendar schedule. Try it free.",
+    date: "Oct 2025",
+    readTime: "Short read",
     linkedInUrl:
       "https://www.linkedin.com/posts/daniel-podolsky-341901242_daniel-the-curriculum-wizard-activity-7374676160594640896-JWym?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
     tags: ["GPT", "Automation", "Education", "Productivity"],
     images: [udemy1, udemy2, udemy3, udemy4],
   },
   {
-    id: "claude-hebrew-chrome-extension",
-    title: "Solving Hebrew-English Text Chaos in Claude",
+    id: "mentorhit-aws-hackathon",
+    title: "MentorHIT: 2nd Place at AWS Public Sector Hackathon",
     summary:
-      "Built a free Chrome extension that fixes RTL/LTR text mixing issues in Claude, featuring 4 styling options and English word highlighting for cleaner, more readable AI conversations.",
-    date: "Nov 2024",
-    readTime: "3 min read",
+      "What if every CS student had an AI mentor from day one? We built it with a Two-Stage LLM Pipeline on Amazon Bedrock - and took 2nd place at AWS National Hackathon for Public Sector.",
+    date: "Sep 2025",
+    readTime: "Medium read",
+    linkedInUrl:
+      "https://www.linkedin.com/posts/daniel-podolsky-341901242_genai-fullstack-aws-activity-7372864220683497472-GO-N?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
+    tags: ["AWS", "Hackathon", "GenAI", "RAG", "Amazon Bedrock"],
+    images: [mentorhit1, mentorhit2, mentorhit3, mentorhit4, mentorhit5],
+  },
+  {
+    id: "claude-code-best-practices",
+    title: "Claude Code Tips for Beginners",
+    summary:
+      "Co-authored with Gil Yona. Stop letting Claude jump straight to code — here's the workflow that actually works, plus a tool that enforces it.",
+    date: "Sep 2025",
+    readTime: "Short read",
+    linkedInUrl:
+      "https://www.linkedin.com/posts/daniel-podolsky-341901242_claude-code-quick-setup-with-cc-sessions-activity-7369602713279533059-hO-8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
+    tags: ["Claude Code", "AI", "Development Workflow", "cc-sessions"],
+    images: [claudeCode1, claudeCode2, claudeCode3, claudeCode4, claudeCode5],
+  },
+  {
+    id: "claude-hebrew-chrome-extension",
+    title: "Chrome Extension: Hebrew RTL Fix for Claude",
+    summary:
+      "Hebrew-English text chaos in Claude? I built a free Chrome extension to fix it. 4 styling options, RTL ordering, and cleaner conversations.",
+    date: "Aug 2025",
+    readTime: "Short read",
     linkedInUrl:
       "https://www.linkedin.com/posts/daniel-podolsky-341901242_claude-rtl-chrome-extension-activity-7364638873638887424-UwVX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxKVKEBFQb1QPr3_awt4ru_k8GAHiaYcKs",
-    tags: ["Chrome Extension", "Hebrew", "Claude", "UX", "Open Source"],
+    tags: ["Chrome Extension", "Hebrew", "Claude", "Open Source"],
     images: [hebrew1, hebrew2, hebrew3, hebrew4, hebrew5, hebrew6],
   },
 ]
