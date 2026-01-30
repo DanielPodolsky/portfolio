@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "MentorHIT",
     description:
       "AI-powered academic mentoring platform that provides personalized guidance to students using RAG-enhanced LLMs and institutional knowledge bases.",
-    techStack: ["React/Vite", "Teamwork", "AWS", "RAG", "LLMs", "Serverless"],
+    techStack: ["React/Vite", "Teamwork", "AWS", "RAG", "LLMs"],
     githubUrl: "https://github.com/MentorHIT",
     liveUrl: "",
     achievements: ["2nd Place Winner · AWS Hackathon"],
@@ -42,10 +42,17 @@ export const projects: Project[] = [
     title: "Developer Portfolio",
     description:
       "A premium portfolio built with modern React patterns, TypeScript, and performance optimization.",
-    techStack: ["React/Vite", "TypeScript", "Tailwind v4", "shadcn/ui"],
+    techStack: [
+      "React/Vite",
+      "TypeScript",
+      "Tailwind v4",
+      "Pinecone",
+      "Anthropic API",
+      "Vercel",
+    ],
     githubUrl: "https://github.com/DanielPodolsky/portfolio",
     liveUrl: "https://danielpodolsky.dev",
-    achievements: ["Lighthouse 100"],
+    achievements: ["Personal Project"],
     featured: true,
     type: "Frontend application",
     problem: "No portfolio :(",
