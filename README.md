@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# Daniel Podolsky - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern, performant portfolio website showcasing my journey from Combat Medic to Software Engineer, built with cutting-edge web technologies.
 
-Currently, two official plugins are available:
+[Live Demo](#) <!-- We'll add deployment link later -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 About
 
-## React Compiler
+Professional portfolio website highlighting my technical projects, skills, and experience. Built with a focus on performance, accessibility, and modern development practices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ⚡ Lightning-fast performance with Vite
+- 🎨 Modern UI with Tailwind CSS v4
+- 🌗 Dark/Light mode support
+- ♿ Fully accessible (WCAG 2.1 AA)
+- 📱 Responsive design
+- 🎭 Smooth animations with Framer Motion
+- 📊 Performance optimized (Lighthouse 100)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Core
+- **React** 19.2.0 - Latest React with modern patterns
+- **TypeScript** 5.9 - Strict mode enabled
+- **Vite** 7.2.2 - Next-generation build tool
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Styling
+- **Tailwind CSS** 4.1.17 - Utility-first CSS framework (v4 beta)
+- **shadcn/ui** - Customizable component library
+- **Lucide Icons** - Beautiful icon system
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Code Quality
+- **ESLint** 9 - Latest flat config
+- **Prettier** - Code formatting
+- **TypeScript Strict Mode** - Maximum type safety
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+├── components/
+│   ├── ui/          # shadcn/ui components
+│   ├── layout/      # Layout components (Header, Footer)
+│   └── sections/    # Page sections (Hero, About, Projects)
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+├── types/           # TypeScript type definitions
+└── assets/          # Static assets
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or pnpm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/portfolio-site.git
+
+# Navigate to project
+cd portfolio-site
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+Available Scripts
+
+npm run dev          # Start dev server (http://localhost:5173)
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+npm run format       # Format with Prettier
+npm run format:check # Check formatting
+
+🏗️ Development Phases
+
+- Phase 0: Project setup and architecture
+- Phase 1: Core layout and navigation
+- Phase 2: Hero and About sections
+- Phase 3: Projects showcase
+- Phase 4: Skills and experience
+- Phase 5: Contact form
+- Phase 6: Performance optimization
+- Phase 7: Testing and quality
+- Phase 8: Deployment and CI/CD
+- Phase 9: Polish and launch
+
+📝 License
+
+This project is open source and available under the LICENSE.
+
+🤝 Connect
+
+- Portfolio: [Coming Soon]
+- LinkedIn: https://www.linkedin.com/in/daniel-podolsky-341901242/
+- GitHub: https://github.com/DanielPodolsky
+- Email: lambodol76@gmail.com
+
+---
+Built with ❤️ by Daniel Podolsky
+
+---
