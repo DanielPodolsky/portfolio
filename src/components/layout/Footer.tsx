@@ -1,4 +1,4 @@
-import { Code2, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 
 export function Footer() {
   return (
