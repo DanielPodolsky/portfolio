@@ -2,7 +2,7 @@ import { Github } from "lucide-react"
 import { ProjectCard } from "@/components/ui/ProjectCard"
 import { projects } from "@/data/projects"
 
-export function Projects() {
+function Projects() {
   return (
     <section
       id="projects"
@@ -39,3 +39,5 @@ export function Projects() {
     </section>
   )
 }
+
+export default Projects

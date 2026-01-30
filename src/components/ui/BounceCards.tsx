@@ -150,6 +150,8 @@ export default function BounceCards({
             className="w-full h-full object-cover"
             src={src}
             alt={`card-${idx}`}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       ))}
