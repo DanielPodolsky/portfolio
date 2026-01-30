@@ -35,3 +35,8 @@ coverage
 # Build info
 .vite
 tsconfig.tsbuildinfo
+# Build output duplicates
+assets/
+logo.svg
+og-image.png
+vite.svg
