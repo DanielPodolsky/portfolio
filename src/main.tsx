@@ -3,6 +3,9 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
 import { ThemeProvider } from "@/contexts/ThemeContext.tsx"
+import { inject } from "@vercel/analytics"
+
+inject()
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
