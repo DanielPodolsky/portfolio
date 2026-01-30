@@ -21,7 +21,6 @@ import {
   Cpu,
   GitBranch,
   Users,
-  Rocket,
   Workflow,
   MessageSquare,
   Cloud,
