@@ -3,7 +3,11 @@ import { useTheme } from "@/contexts/ThemeContext.tsx"
 import LogoDark from "@/assets/images/LogoDark.jpg"
 import LogoLight from "@/assets/images/LogoLight.jpg"
 
-export function Header() {
+interface HeaderProps {
+  onResumeClick: () => void
+}
+
+export function Header({ onResumeClick }: HeaderProps) {
   const { theme, toggleTheme } = useTheme()
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-neutral-800/80 dark:border-neutral-200/80 bg-black/70 dark:bg-white/70 backdrop-blur-xl transition-colors duration-500">
@@ -81,14 +85,14 @@ export function Header() {
               <Moon className="h-[14px] w-[14px]" />
             )}
           </button>
-          <a
-            href="#resume"
-            className="inline-flex items-center rounded-full bg-neutral-100 dark:bg-neutral-900 px-3.5 py-1.5 text-xs font-medium tracking-tight text-black dark:text-white shadow-sm transition-all duration-150 
+          <button
+            onClick={onResumeClick}
+            className="inline-flex items-center rounded-full bg-neutral-100 dark:bg-neutral-900 px-3.5 py-1.5 text-xs font-medium tracking-tight text-black dark:text-white shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-white dark:hover:bg-neutral-800"
           >
             <FileText className="mr-1.5 h-[14px] w-[14px]" />
             Resume
-          </a>
+          </button>
         </div>
       </div>
     </header>

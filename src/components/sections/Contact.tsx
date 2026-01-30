@@ -2,7 +2,11 @@ import { Mail, Linkedin, Github, Download, Send } from "lucide-react"
 import { useState, type FormEvent } from "react"
 import emailjs from "@emailjs/browser"
 
-export function Contact() {
+interface ContactProps {
+  onResumeClick: () => void
+}
+
+export function Contact({ onResumeClick }: ContactProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -107,14 +111,14 @@ export function Contact() {
 
           {/* CTA buttons */}
           <div className="mt-6 flex flex-wrap gap-3 text-xs">
-            <a
-              href="#resume"
+            <button
+              onClick={onResumeClick}
               className="inline-flex items-center rounded-full bg-neutral-100 dark:bg-neutral-900 px-4 py-2 text-[11px] font-medium tracking-tight text-black dark:text-white shadow-sm transition-all duration-150 
   hover:-translate-y-[1px] hover:bg-white dark:hover:bg-neutral-800"
             >
               <Download className="mr-1.5 h-[15px] w-[15px]" />
               Download Resume
-            </a>{" "}
+            </button>{" "}
           </div>
         </div>
 
