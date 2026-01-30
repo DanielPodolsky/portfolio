@@ -50,7 +50,7 @@ function Contact({ onResumeClick }: ContactProps) {
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         {/* Left: Contact info */}
         <div ref={headerRef as React.RefObject<HTMLDivElement>}>
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
+          <h2 className="tracking-wide text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-2xl">
             Let's Talk
           </h2>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -119,7 +119,7 @@ function Contact({ onResumeClick }: ContactProps) {
             <div className="mt-6 flex flex-wrap gap-3 text-xs">
               <button
                 onClick={onResumeClick}
-                className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+                className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
               >
                 <Download className="mr-1.5 h-[15px] w-[15px]" />
@@ -138,7 +138,7 @@ function Contact({ onResumeClick }: ContactProps) {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
             Send a message
           </p>
-          <p className="mt-2 text-[13px] text-neutral-600 dark:text-neutral-300">
+          <p className="mt-2 text-[14px] text-neutral-600 dark:text-neutral-300">
             Share a role description, problem space, or idea. I'll do my best to
             respond quickly.
           </p>
@@ -218,7 +218,7 @@ function Contact({ onResumeClick }: ContactProps) {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+                className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-[11px] font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="mr-1.5 h-[15px] w-[15px]" />
