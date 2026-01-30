@@ -5,6 +5,7 @@ interface ChatInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   onSubmit: (e: React.FormEvent) => void
   disabled: boolean
+  isMobile: boolean
 }
 
 export function ChatInput({
@@ -12,6 +13,7 @@ export function ChatInput({
   onChange,
   onSubmit,
   disabled,
+  isMobile,
 }: ChatInputProps) {
   return (
     <form
@@ -25,7 +27,7 @@ export function ChatInput({
           required
           placeholder="Ask me anything :)"
           className="flex-1 px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-100"
-          autoFocus
+          autoFocus={!isMobile}
         />
         <button
           type="submit"
