@@ -67,7 +67,6 @@ export const skills: Skill[] = [
   { name: "Hugging Face", icon: SiHuggingface, category: "practices" },
 
   // Currently Expanding
-  { name: "Next.js", icon: Rocket, category: "expanding" },
   { name: "Docker", icon: SiDocker, category: "expanding" },
   { name: "GitHub Actions", icon: SiGithubactions, category: "expanding" },
   { name: "Prompt Engineering", icon: MessageSquare, category: "expanding" },
