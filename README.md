@@ -85,7 +85,7 @@ src/
 
 - [ ] Component testing with Vitest
 - [ ] GitHub Actions CI/CD pipeline
-- [ ] Vercel deployment with analytics
+- [X] Vercel deployment with analytics
 
 ## License
 
