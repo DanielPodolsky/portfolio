@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "A premium portfolio built with modern React patterns, TypeScript, and performance optimization.",
     techStack: ["React/Vite", "TypeScript", "Tailwind v4", "shadcn/ui"],
     githubUrl: "https://github.com/DanielPodolsky/portfolio",
-    liveUrl: "https://your-portfolio-url.com",
+    liveUrl: "https://danielpodolsky.dev",
     achievements: ["Lighthouse 100"],
     featured: true,
     type: "Frontend application",
