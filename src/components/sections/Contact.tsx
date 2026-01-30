@@ -117,7 +117,7 @@ function Contact({ onResumeClick }: ContactProps) {
   hover:-translate-y-[1px] hover:bg-white dark:hover:bg-neutral-800"
             >
               <Download className="mr-1.5 h-[15px] w-[15px]" />
-              Download Resume
+              View Resume
             </button>{" "}
           </div>
         </div>
