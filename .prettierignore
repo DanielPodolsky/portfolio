@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.next
+out
+
+# Cache
+.cache
+.vite
+.turbo
+
+# Generated files
+coverage
+*.log
+.DS_Store
