@@ -9,7 +9,7 @@ export const projects: Project[] = [
     techStack: ["React/Vite", "Teamwork", "AWS", "RAG", "LLMs", "Serverless"],
     githubUrl: "https://github.com/MentorHIT",
     liveUrl: "",
-    achievements: ["2nd place winner - AWS Public Sector Innovation Hackathon"],
+    achievements: ["2nd Place Winner · AWS Hackathon"],
     featured: true,
     type: "Full-stack Application",
     problem:
