@@ -17,7 +17,10 @@ import SpotlightCard from "@/components/ui/SpotlightCard"
 
 export function Hero() {
   return (
-    <section className="border-b border-neutral-800/80 dark:border-neutral-200/80 pb-12 md:pb-16 flex flex-col gap-8 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)]">
+    <section
+      id="about"
+      className="border-b border-neutral-800/80 dark:border-neutral-200/80 pb-12 md:pb-16 flex flex-col gap-8 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)]"
+    >
       {/* Left Column */}
       <div className="flex flex-col space-y-6">
         {/* Status */}
