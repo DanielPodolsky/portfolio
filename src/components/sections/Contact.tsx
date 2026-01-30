@@ -6,7 +6,7 @@ interface ContactProps {
   onResumeClick: () => void
 }
 
-export function Contact({ onResumeClick }: ContactProps) {
+function Contact({ onResumeClick }: ContactProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -237,3 +237,5 @@ export function Contact({ onResumeClick }: ContactProps) {
     </section>
   )
 }
+
+export default Contact

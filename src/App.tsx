@@ -1,13 +1,24 @@
-import { useState } from "react"
+import { useState, lazy, Suspense } from "react"
 import { Layout } from "@/components/layout/Layout"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
-import { Hero } from "@/components/sections/Hero"
-import { Projects } from "@/components/sections/Projects"
-import { Blog } from "@/components/sections/Blog"
-import { Skills } from "@/components/sections/Skills"
-import { Contact } from "@/components/sections/Contact"
-import { ResumeModal } from "@/components/ui/ResumeModal"
+import Hero from "@/components/sections/Hero"
+
+// Lazy load sections below the fold
+const Projects = lazy(() => import("@/components/sections/Projects"))
+const Blog = lazy(() => import("@/components/sections/Blog"))
+const Skills = lazy(() => import("@/components/sections/Skills"))
+const Contact = lazy(() => import("@/components/sections/Contact"))
+const ResumeModal = lazy(() => import("@/components/ui/ResumeModal"))
+
+// Loading fallback
+function SectionLoader() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-neutral-700 border-t-neutral-400" />
+    </div>
+  )
+}
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
@@ -16,17 +27,34 @@ function App() {
     <Layout>
       <Header onResumeClick={() => setIsResumeOpen(true)} />
       <Hero onResumeClick={() => setIsResumeOpen(true)} />
-      <Projects />
-      <Blog />
-      <Skills />
-      <Contact onResumeClick={() => setIsResumeOpen(true)} />
+
+      <Suspense fallback={<SectionLoader />}>
+        <Projects />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <Blog />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <Skills />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <Contact onResumeClick={() => setIsResumeOpen(true)} />
+      </Suspense>
+
       <Footer />
 
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-        pdfUrl="/resume.pdf"
-      />
+      <Suspense fallback={null}>
+        {isResumeOpen && (
+          <ResumeModal
+            isOpen={isResumeOpen}
+            onClose={() => setIsResumeOpen(false)}
+            pdfUrl="/resume.pdf"
+          />
+        )}
+      </Suspense>
     </Layout>
   )
 }

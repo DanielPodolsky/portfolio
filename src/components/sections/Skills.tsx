@@ -1,7 +1,7 @@
 import { Marquee } from "@/components/ui/Marquee"
 import { skills } from "@/data/skills"
 
-export function Skills() {
+function Skills() {
   // Filter skills by category
   const coreSkills = skills.filter(s => s.category === "core")
   const cloudSkills = skills.filter(s => s.category === "cloud")
@@ -70,3 +70,5 @@ function SkillPill({ skill }: { skill: (typeof skills)[number] }) {
     </div>
   )
 }
+
+export default Skills

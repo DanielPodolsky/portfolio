@@ -2,7 +2,7 @@ import { Linkedin } from "lucide-react"
 import { BlogCard } from "@/components/ui/BlogCard"
 import { blogPosts } from "@/data/blogPosts"
 
-export function Blog() {
+function Blog() {
   return (
     <section
       id="blogs"
@@ -38,3 +38,5 @@ export function Blog() {
     </section>
   )
 }
+
+export default Blog

@@ -11,14 +11,14 @@ import {
   Linkedin,
 } from "lucide-react"
 import ShinyText from "@/components/ui/ShinyText"
-import profilePic from "@/assets/images/ProfilePicture.jpg"
+import profilePic from "@/assets/images/ProfilePicture.webp"
 import SpotlightCard from "@/components/ui/SpotlightCard"
 
 interface HeroProps {
   onResumeClick: () => void
 }
 
-export function Hero({ onResumeClick }: HeroProps) {
+function Hero({ onResumeClick }: HeroProps) {
   return (
     <section
       id="about"
@@ -249,3 +249,5 @@ export function Hero({ onResumeClick }: HeroProps) {
     </section>
   )
 }
+
+export default Hero
