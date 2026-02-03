@@ -47,3 +47,12 @@ vite.svg
 scripts/
 knowledge/
 .octocode/
+
+# OwnYourCode - AI-mentored development (personal/local)
+ownyourcode/
+.claude/commands/own/
+.claude/skills/
+.claude/ownyourcode-manifest.json
+.claude/settings.local.json
+CLAUDE.md
+CLAUDE.md.pre-ownyourcode
