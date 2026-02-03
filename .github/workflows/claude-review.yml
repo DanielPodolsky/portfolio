@@ -1,66 +1,35 @@
-name: Claude Code Review
+name: Claude Code
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
   issue_comment:
     types: [created]
-
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
+  pull_request_review_comment:
+    types: [created]
+  issues:
+    types: [opened, assigned]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  claude-review:
-    runs-on: ubuntu-latest
+  claude:
     if: |
-      github.event_name == 'pull_request' ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude'))
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
+      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: Claude Code Action
+      - name: Run Claude
         uses: anthropics/claude-code-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            REPO: ${{ github.repository }}
-            PR NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
-
-            WORKFLOW:
-            1. Run `gh pr view $PR_NUMBER --comments` to see previous review comments
-            2. Run `gh pr diff $PR_NUMBER` to see current changes
-            3. Compare: What's NEW since any previous review? Focus ONLY on new/changed code.
-            4. If previous issues were addressed, acknowledge briefly. Don't re-raise resolved issues.
-
-            REVIEW STYLE:
-            - Be a senior tech lead: concise, direct, actionable
-            - Only comment if there's something meaningful to say
-            - If code looks good, say "LGTM" with a one-liner why
-            - Max 3-5 bullet points for issues (prioritize by impact)
-            - No fluff, no excessive praise, no repetition, no emojis
-
-            FORMAT:
-            ```
-            ## Review: [commit sha short]
-
-            **Status:** LGTM | Changes Requested | Needs Discussion
-
-            **Summary:** One sentence on overall quality.
-
-            **Issues (if any):**
-            - [Critical/Major/Minor]: Issue description → Suggested fix
-
-            **Resolved from previous review:** (if applicable)
-            - ✓ Issue that was fixed
-            ```
-
-            Use `gh pr comment` for the review. One comment per push, not multiple.
-
-          claude_args: |
-            --allowedTools "Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
