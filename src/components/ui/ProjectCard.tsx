@@ -8,7 +8,10 @@ interface ProjectCardProps {
 
 // Helper to determine badge color based on achievement text
 function getAchievementStyle(achievement: string) {
-  if (achievement.toLowerCase().includes("winner")) {
+  if (
+    achievement.toLowerCase().includes("winner") ||
+    achievement.toLowerCase().includes("stars")
+  ) {
     return "border-amber-400/40 bg-amber-500/10 text-amber-600 dark:text-amber-300"
   }
   return "border-emerald-400/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-300"
@@ -16,7 +19,10 @@ function getAchievementStyle(achievement: string) {
 
 // Helper to get icon for achievement
 function getAchievementIcon(achievement: string) {
-  if (achievement.toLowerCase().includes("2nd")) {
+  if (
+    achievement.toLowerCase().includes("2nd") ||
+    achievement.toLowerCase().includes("stars")
+  ) {
     return <Award className="mr-1.5 h-3.5 w-3.5" />
   }
   if (achievement.toLowerCase().includes("1st")) {
