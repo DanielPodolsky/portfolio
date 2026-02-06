@@ -42,14 +42,22 @@ export const projects: Project[] = [
     title: "Developer Portfolio",
     description:
       "A premium portfolio built with modern React patterns, TypeScript, and performance optimization.",
-    techStack: ["React/Vite", "TypeScript", "Tailwind v4", "shadcn/ui"],
+    techStack: [
+      "React/Vite",
+      "TypeScript",
+      "Tailwind v4",
+      "Vercel",
+      "Serverless Functions",
+    ],
     githubUrl: "https://github.com/DanielPodolsky/portfolio",
     liveUrl: "https://danielpodolsky.dev",
-    achievements: ["Lighthouse 100"],
+    achievements: ["Personal Project"],
     featured: true,
     type: "Frontend application",
-    problem: "No portfolio :(",
-    solution: "Build a portfolio!",
+    problem:
+      "Wanted a way for visitors to go beyond reading static content and actually explore my background, projects, and skills in a conversational way.",
+    solution:
+      "Built an interactive portfolio with an AI-powered chatbot using RAG with Pinecone vector search and Claude Haiku. Visitors ask questions, get real answers. Lighthouse 100 through code splitting and optimized image delivery.",
     impact:
       "Deepened understanding of modern React patterns, component-driven architecture, Vite build optimization, and production-grade frontend practices including accessibility and performance tuning.",
   },
@@ -60,9 +68,11 @@ export const projects: Project[] = [
       "An AI-mentored development workflow where AI guides and you build. Designed to help developers strengthen their skills, take ownership of their code, and grow independently. More ownership, less dependency.",
     techStack: [
       "Claude Code",
-      "MCP Protocol",
-      "Skill & Agent Architecture",
+      "MCP",
+      "Skills",
       "Shell/Bash",
+      "Agents",
+      "Agentic Workflow",
     ],
     githubUrl: "https://github.com/DanielPodolsky/ownyourcode",
     liveUrl: "https://ownyourcode.dev",

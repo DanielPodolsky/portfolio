@@ -8,12 +8,12 @@ function Projects() {
   const headerRef = useScrollAnimation({ duration: 700 })
 
   // Animate each project with stagger delays
-  const projectRefs = [
-    useScrollAnimation({ delay: 0 }),
-    useScrollAnimation({ delay: 0.15 }),
-    useScrollAnimation({ delay: 0.2 }),
-    useScrollAnimation({ delay: 0.35 }),
-  ]
+  const projectRefs = projects.map((_, index) => {
+    const row = Math.floor(index / 2)
+    const col = index % 2
+    return useScrollAnimation({ delay: row * 0.2 + col * 0.15 })
+  })
+
   return (
     <section
       id="projects"

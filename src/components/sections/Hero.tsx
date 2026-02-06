@@ -53,8 +53,13 @@ function Hero({ onResumeClick }: HeroProps) {
             <p className="font-heading mt-2 tracking-wide text-base font-medium text-neutral-600 dark:text-neutral-300 sm:text-lg">
               Full Stack Development | AI Workflow Architect
             </p>
-            <p className="font-heading tracking-wide text-base font-medium">
-              Creator of <span className="text-[#4DDC7F]">ownyourcode.dev</span>
+            <p className="font-heading tracking-wide text-sm font-medium text-neutral-600 dark:text-neutral-300 sm:text-[16px]">
+              Creator of <span className="text-[#4DDC7F]">ownyourcode.dev</span>{" "}
+              (63+ GitHub Stars) and{" "}
+              <span className="bg-linear-to-r from-[#E8985D] to-[#C15F3C] bg-clip-text text-transparent">
+                Claude Code
+              </span>{" "}
+              enthusiast
             </p>
           </div>
         </div>
