@@ -53,4 +53,27 @@ export const projects: Project[] = [
     impact:
       "Deepened understanding of modern React patterns, component-driven architecture, Vite build optimization, and production-grade frontend practices including accessibility and performance tuning.",
   },
+  {
+    id: "ownyourcode",
+    title: "OwnYourCode",
+    description:
+      "An AI-mentored development workflow where AI guides and you build. Designed to help developers strengthen their skills, take ownership of their code, and grow independently. More ownership, less dependency.",
+    techStack: [
+      "Claude Code",
+      "MCP Protocol",
+      "Skill & Agent Architecture",
+      "Shell/Bash",
+    ],
+    githubUrl: "https://github.com/DanielPodolsky/ownyourcode",
+    liveUrl: "https://ownyourcode.dev",
+    achievements: ["63+ GitHub Stars"],
+    featured: true,
+    type: "AI Developer Tooling",
+    problem:
+      "Research from Anthropic and MIT highlights that cognitive offloading onto AI can gradually erode code ownership and long-term maintainability. For developers who want to grow their skills alongside AI - not just ship faster - there was no workflow built for that.",
+    solution:
+      "A structured mentorship workflow where AI asks the right questions instead of giving answers, verifies everything against official documentation, reviews code through six quality gates before completion, and captures learnings in a flywheel that compounds knowledge across every project.",
+    impact:
+      "63+ GitHub stars and growing, adopted by developers who want to strengthen their skills alongside AI. The learning flywheel compounds knowledge across every project — each task makes the next one smarter. Designed to make itself less needed over time.",
+  },
 ]

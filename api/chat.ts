@@ -29,7 +29,8 @@ const GREETINGS = [
 ]
 
 const FALLBACK_CONTEXT = `
-I'm Daniel, a Full Stack Developer and AI Integration Specialist.
+I'm Daniel, a Full Stack Developer and AI Workflow Architect.
+Creator of ownyourcode.dev (63+ GitHub Stars) and Claude Code enthusiast.
 I build systems that combine thoughtful architecture with the power of LLMs.
 Feel free to ask me about my projects, skills, or background!
 `.trim()

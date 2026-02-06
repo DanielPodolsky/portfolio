@@ -11,6 +11,7 @@ import {
   Brain,
   Zap,
   Linkedin,
+  Star,
 } from "lucide-react"
 import ShinyText from "@/components/ui/ShinyText"
 import SpotlightCard from "@/components/ui/SpotlightCard"
@@ -50,39 +51,48 @@ function Hero({ onResumeClick }: HeroProps) {
               className="custom-class font-heading"
             />
             <p className="font-heading mt-2 tracking-wide text-base font-medium text-neutral-600 dark:text-neutral-300 sm:text-lg">
-              Full Stack Development | AI Integration Specialist
+              Full Stack Development | AI Workflow Architect
+            </p>
+            <p className="font-heading tracking-wide text-base font-medium">
+              Creator of <span className="text-[#4DDC7F]">ownyourcode.dev</span>
             </p>
           </div>
         </div>
 
         {/* Description */}
-        <div className="space-y-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 md:text-[15px] text-justify hyphens-auto">
+        <div className="space-y-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 md:text-[16px] text-justify hyphens-auto">
           <p>
-            I became a Full Stack Developer during my CS degree, and when I
-            started working with AI, it unlocked something new. Now I build
-            systems that combine thoughtful architecture with the power of LLMs
-            - not chasing trends, but creating solutions that weren't possible a
-            few years ago.
+            I became a Full Stack Developer during my CS degree. When I started
+            working with AI, it unlocked a new dimension - building systems
+            where LLMs aren't just features, but core architecture. I love
+            creating solutions that weren't possible a few years ago, and I'm
+            always looking for the next one.
           </p>
           <p>
             Before tech, I was a Combat Medic and Drone Operator in the Israeli
-            Defense Force. I graduated with a 89 GPA from Holon Institute of
-            Technology (H.I.T.), but more importantly, I learned that good
-            architecture comes before good code - I map out the system before
-            writing code.
+            Defense Force. I graduated with an 89 GPA from Holon Institute of
+            Technology (H.I.T.), where I learned that good architecture comes
+            before good code.
           </p>
           <p>
             My team from H.I.T. won 2nd place at the AWS Public Sector
             Innovation Hackathon with MentorHIT, an AI-powered mentoring
-            platform using RAG and serverless AWS. Building its LLM query flow,
-            and later my LLM-Powered Log Analyzer project, taught me the same
-            lesson: language models do incredible things when you architect the
-            system correctly.
+            platform using RAG and serverless AWS. Building that — and several
+            personal projects with AI tools — made me pay close attention to how
+            developers actually grow alongside AI. Research from Anthropic and
+            MIT confirmed what I was seeing: cognitive offloading erodes
+            ownership and long-term code maintainability. So I built OwnYourCode
+            — a research-based AI-mentored development workflow built around a
+            simple principle: more ownership, less dependency. The result is
+            developers who strengthen their skills, not outsource them.
           </p>
           <p>
-            Now I'm building at that intersection - combining solid engineering
-            fundamentals with the capabilities of modern AI. I want to create
-            tools people will actually use.
+            Now I'm building agentic CLI tools with Claude Code, designing
+            workflows that shape how developers interact with AI every day — and
+            using that same workflow to sharpen my own full stack skills.
+            OwnYourCode has earned 63 stars on GitHub, and this is the work I
+            love — getting creative with AI and building things that are
+            genuinely useful.
           </p>
         </div>
 
@@ -91,7 +101,7 @@ function Hero({ onResumeClick }: HeroProps) {
           {/* Projects Button */}
           <a
             href="#projects"
-            className="tracking-wide font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
+            className="font-heading inline-flex items-center rounded-full bg-neutral-900 dark:bg-neutral-100 px-4 py-2 text-xs font-medium tracking-tight text-white dark:text-black shadow-sm transition-all duration-150
   hover:-translate-y-[1px] hover:bg-neutral-800 dark:hover:bg-white"
           >
             <Eye className="mr-1.5 h-[15px] w-[15px]" />
@@ -171,11 +181,11 @@ function Hero({ onResumeClick }: HeroProps) {
             {/* Expanded content */}
             <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out group-hover:max-h-35 group-hover:opacity-100">
               <p className="mt-2 text-[11px] leading-relaxed text-neutral-600 dark:text-neutral-300">
-                Hackathons · Personal Projects
+                Building with Claude Code · Creator of OwnYourCode
               </p>
               <p className="mt-1 text-[11px] leading-relaxed text-neutral-700 dark:text-neutral-400">
-                Adapting AI to my workflows. Currently exploring Claude Code and
-                creating ideal agents for my missions.
+                Designing AI-mentored development workflows and agentic CLI
+                tools that shape how developers grow alongside AI.
               </p>
             </div>
           </SpotlightCard>
@@ -245,7 +255,6 @@ function Hero({ onResumeClick }: HeroProps) {
 
         <div className="order-1 md:order-none rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60 bg-white/80 dark:bg-neutral-900/40 shadow-md dark:shadow-none px-4 py-3.5 transition-colors duration-500">
           <div className="space-y-2.5">
-            {/* 1st Place - H.I.T. Hackathon */}
             <div className="flex items-start gap-2">
               <Trophy className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-amber-400" />
               <div className="flex-1">
@@ -292,6 +301,22 @@ function Hero({ onResumeClick }: HeroProps) {
                 </p>
                 <p className="mt-0.5 text-[10px] leading-tight text-neutral-600 dark:text-neutral-500">
                   Thinking...
+                </p>
+              </div>
+            </div>
+
+            {/* OwnYourCode */}
+            <div className="flex items-start gap-2">
+              <Star
+                fill="currentColor"
+                className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-amber-400"
+              />
+              <div className="flex-1">
+                <p className="text-[11px] font-medium leading-tight text-neutral-900 dark:text-neutral-200">
+                  Creator · OwnYourCode
+                </p>
+                <p className="mt-0.5 text-[10px] leading-tight text-neutral-600 dark:text-neutral-500">
+                  ⭐ 63 on GitHub
                 </p>
               </div>
             </div>

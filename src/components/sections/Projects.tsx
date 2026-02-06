@@ -12,6 +12,7 @@ function Projects() {
     useScrollAnimation({ delay: 0 }),
     useScrollAnimation({ delay: 0.15 }),
     useScrollAnimation({ delay: 0.2 }),
+    useScrollAnimation({ delay: 0.35 }),
   ]
   return (
     <section
