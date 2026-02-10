@@ -13,8 +13,10 @@ A performant portfolio website built with React 19 and TypeScript, featuring an 
 
 <!-- TODO: Add hero screenshot or GIF demo here -->
 <div align="center">
-    <img width="2563" height="1318" alt="image" src="https://github.com/user-attachments/assets/efb61877-7a9f-4300-acfd-4edec90bd6f1" />
+    <img width="2559" height="1317" alt="image" src="https://github.com/user-attachments/assets/d556b350-6de1-4edc-869c-5a5122341bd8" />
 </div>
+
+
 
 <details>
   <summary>Table of Contents</summary>
