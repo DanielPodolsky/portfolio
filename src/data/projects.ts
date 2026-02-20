@@ -76,7 +76,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/DanielPodolsky/ownyourcode",
     liveUrl: "https://ownyourcode.dev",
-    achievements: ["63+ GitHub Stars"],
+    achievements: ["135+ GitHub Stars"],
     featured: true,
     type: "AI Developer Tooling",
     problem:
@@ -84,6 +84,6 @@ export const projects: Project[] = [
     solution:
       "A structured mentorship workflow where AI asks the right questions instead of giving answers, verifies everything against official documentation, reviews code through six quality gates before completion, and captures learnings in a flywheel that compounds knowledge across every project.",
     impact:
-      "63+ GitHub stars and growing, adopted by developers who want to strengthen their skills alongside AI. The learning flywheel compounds knowledge across every project — each task makes the next one smarter. Designed to make itself less needed over time.",
+      "135+ GitHub stars and growing, adopted by developers who want to strengthen their skills alongside AI. The learning flywheel compounds knowledge across every project — each task makes the next one smarter. Designed to make itself less needed over time.",
   },
 ]
