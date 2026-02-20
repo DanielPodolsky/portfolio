@@ -55,7 +55,7 @@ function Hero({ onResumeClick }: HeroProps) {
             </p>
             <p className="font-heading tracking-wide text-sm font-medium text-neutral-600 dark:text-neutral-300 sm:text-[16px]">
               Creator of <span className="text-[#4DDC7F]">ownyourcode.dev</span>{" "}
-              (63+ GitHub Stars) and{" "}
+              (135+ GitHub Stars) and{" "}
               <span className="bg-linear-to-r from-[#E8985D] to-[#C15F3C] bg-clip-text text-transparent">
                 Claude Code
               </span>{" "}
@@ -95,7 +95,7 @@ function Hero({ onResumeClick }: HeroProps) {
             Now I'm building agentic CLI tools with Claude Code, designing
             workflows that shape how developers interact with AI every day — and
             using that same workflow to sharpen my own full stack skills.
-            OwnYourCode has earned 63 stars on GitHub, and this is the work I
+            OwnYourCode has earned 135 stars on GitHub, and this is the work I
             love — getting creative with AI and building things that are
             genuinely useful.
           </p>
@@ -321,7 +321,7 @@ function Hero({ onResumeClick }: HeroProps) {
                   Creator · OwnYourCode
                 </p>
                 <p className="mt-0.5 text-[10px] leading-tight text-neutral-600 dark:text-neutral-500">
-                  ⭐ 63 on GitHub
+                  ⭐ 135 on GitHub
                 </p>
               </div>
             </div>

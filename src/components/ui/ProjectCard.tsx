@@ -33,7 +33,7 @@ function getAchievementIcon(achievement: string) {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <SpotlightCard className="h-full flex flex-col p-5 transition-transform duration-150 hover:-translate-y-[2px]">
+    <SpotlightCard className="h-full flex flex-col p-5 transition-transform duration-150 hover:-translate-y-0.5">
       {/* Top row: Achievement + Type */}
       <div className="flex items-center justify-between">
         {/* Achievement badges */}
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {(project.problem || project.solution || project.impact) && (
         <div className="mt-4 flex flex-col gap-3 text-justify hyphens-auto">
           {project.problem && (
-            <div className="rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 via-red-600/5 to-transparent p-3">
+            <div className="rounded-2xl border border-red-500/20 bg-linear-to-br from-red-500/10 via-red-600/5 to-transparent p-3">
               <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-red-500 dark:text-red-400">
                 Problem
               </p>
@@ -83,7 +83,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           )}
           {project.solution && (
-            <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-emerald-600/5 to-transparent p-3">
+            <div className="rounded-2xl border border-emerald-500/20 bg-linear-to-br from-emerald-500/10 via-emerald-600/5 to-transparent p-3">
               <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-emerald-500 dark:text-emerald-400">
                 Solution
               </p>
@@ -93,7 +93,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           )}
           {project.impact && (
-            <div className="rounded-2xl border border-sky-500/20 bg-gradient-to-br from-sky-500/10 via-sky-600/5 to-transparent p-3">
+            <div className="rounded-2xl border border-sky-500/20 bg-linear-to-br from-sky-500/10 via-sky-600/5 to-transparent p-3">
               <p className="font-heading text-[11px] font-medium uppercase tracking-[0.16em] text-sky-500 dark:text-sky-400">
                 Impact
               </p>
