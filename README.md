@@ -72,19 +72,6 @@ This portfolio showcases my transition from Combat Medic to Software Engineer th
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Available Scripts
-
-| Command                | Description                         |
-| ---------------------- | ----------------------------------- |
-| `npm run dev`          | Start development server with HMR   |
-| `npm run build`        | Type-check and build for production |
-| `npm run preview`      | Preview production build locally    |
-| `npm run lint`         | Run ESLint on all files             |
-| `npm run format`       | Format code with Prettier           |
-| `npm run format:check` | Check formatting without writing    |
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Key Features
 
 ### Performance
